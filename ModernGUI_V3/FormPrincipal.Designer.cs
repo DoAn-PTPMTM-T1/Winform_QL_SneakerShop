@@ -42,11 +42,11 @@
             this.btnQuanLi = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
+            this.uiLabel1 = new Sunny.UI.UILabel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
-            this.uiLabel1 = new Sunny.UI.UILabel();
             this.panelContenedor.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -73,10 +73,10 @@
             // 
             this.panelformularios.BackColor = System.Drawing.SystemColors.Control;
             this.panelformularios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelformularios.Location = new System.Drawing.Point(251, 39);
+            this.panelformularios.Location = new System.Drawing.Point(183, 39);
             this.panelformularios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelformularios.Name = "panelformularios";
-            this.panelformularios.Size = new System.Drawing.Size(1249, 761);
+            this.panelformularios.Size = new System.Drawing.Size(1317, 761);
             this.panelformularios.TabIndex = 2;
             // 
             // panelMenu
@@ -95,7 +95,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 39);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(251, 761);
+            this.panelMenu.Size = new System.Drawing.Size(183, 761);
             this.panelMenu.TabIndex = 1;
             // 
             // btnTenNhanVien
@@ -111,7 +111,7 @@
             this.btnTenNhanVien.Location = new System.Drawing.Point(0, 712);
             this.btnTenNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTenNhanVien.Name = "btnTenNhanVien";
-            this.btnTenNhanVien.Size = new System.Drawing.Size(251, 49);
+            this.btnTenNhanVien.Size = new System.Drawing.Size(183, 49);
             this.btnTenNhanVien.TabIndex = 8;
             this.btnTenNhanVien.Text = "Tên nhân viên";
             this.btnTenNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -130,7 +130,7 @@
             this.btnTrangChu.Location = new System.Drawing.Point(3, 145);
             this.btnTrangChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTrangChu.Name = "btnTrangChu";
-            this.btnTrangChu.Size = new System.Drawing.Size(251, 49);
+            this.btnTrangChu.Size = new System.Drawing.Size(183, 49);
             this.btnTrangChu.TabIndex = 7;
             this.btnTrangChu.Text = "Trang chủ";
             this.btnTrangChu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -149,7 +149,7 @@
             this.btnBanHang.Location = new System.Drawing.Point(3, 198);
             this.btnBanHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBanHang.Name = "btnBanHang";
-            this.btnBanHang.Size = new System.Drawing.Size(251, 49);
+            this.btnBanHang.Size = new System.Drawing.Size(183, 49);
             this.btnBanHang.TabIndex = 6;
             this.btnBanHang.Text = "Bán hàng";
             this.btnBanHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -169,7 +169,7 @@
             this.btnDangXuat.Location = new System.Drawing.Point(3, 516);
             this.btnDangXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(251, 49);
+            this.btnDangXuat.Size = new System.Drawing.Size(183, 49);
             this.btnDangXuat.TabIndex = 5;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -188,7 +188,7 @@
             this.btnCaiDat.Location = new System.Drawing.Point(3, 463);
             this.btnCaiDat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCaiDat.Name = "btnCaiDat";
-            this.btnCaiDat.Size = new System.Drawing.Size(251, 49);
+            this.btnCaiDat.Size = new System.Drawing.Size(183, 49);
             this.btnCaiDat.TabIndex = 4;
             this.btnCaiDat.Text = "Cài đặt";
             this.btnCaiDat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -208,7 +208,7 @@
             this.btnNhapHang.Location = new System.Drawing.Point(3, 357);
             this.btnNhapHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhapHang.Name = "btnNhapHang";
-            this.btnNhapHang.Size = new System.Drawing.Size(251, 49);
+            this.btnNhapHang.Size = new System.Drawing.Size(183, 49);
             this.btnNhapHang.TabIndex = 3;
             this.btnNhapHang.Text = "Nhập hàng";
             this.btnNhapHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -228,7 +228,7 @@
             this.btnKhachHang.Location = new System.Drawing.Point(3, 304);
             this.btnKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(251, 49);
+            this.btnKhachHang.Size = new System.Drawing.Size(183, 49);
             this.btnKhachHang.TabIndex = 2;
             this.btnKhachHang.Text = "Khách hàng";
             this.btnKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -248,7 +248,7 @@
             this.btnQuanLi.Location = new System.Drawing.Point(3, 251);
             this.btnQuanLi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQuanLi.Name = "btnQuanLi";
-            this.btnQuanLi.Size = new System.Drawing.Size(251, 49);
+            this.btnQuanLi.Size = new System.Drawing.Size(183, 49);
             this.btnQuanLi.TabIndex = 1;
             this.btnQuanLi.Text = "Quản lí";
             this.btnQuanLi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -268,7 +268,7 @@
             this.btnThongKe.Location = new System.Drawing.Point(3, 410);
             this.btnThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(251, 49);
+            this.btnThongKe.Size = new System.Drawing.Size(183, 49);
             this.btnThongKe.TabIndex = 0;
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -290,6 +290,19 @@
             this.panelBarraTitulo.Size = new System.Drawing.Size(1500, 39);
             this.panelBarraTitulo.TabIndex = 0;
             this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel1.ForeColor = System.Drawing.Color.White;
+            this.uiLabel1.Image = ((System.Drawing.Image)(resources.GetObject("uiLabel1.Image")));
+            this.uiLabel1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiLabel1.Location = new System.Drawing.Point(3, 0);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(346, 41);
+            this.uiLabel1.TabIndex = 4;
+            this.uiLabel1.Text = "Quản lí cửa hàng giày thể thao";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnMinimizar
             // 
@@ -347,19 +360,6 @@
             this.btnMaximizar.TabStop = false;
             this.btnMaximizar.Visible = false;
             this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
-            // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel1.ForeColor = System.Drawing.Color.White;
-            this.uiLabel1.Image = ((System.Drawing.Image)(resources.GetObject("uiLabel1.Image")));
-            this.uiLabel1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel1.Location = new System.Drawing.Point(3, 0);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(346, 41);
-            this.uiLabel1.TabIndex = 4;
-            this.uiLabel1.Text = "Quản lí cửa hàng giày thể thao";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormPrincipal
             // 
