@@ -15,6 +15,17 @@ namespace ModernGUI_V3
         public FQuanLi()
         {
             InitializeComponent();
+            Enable_Control_banDau();
+        }
+
+        void Enable_Control_banDau()
+        {
+            control_DanhMuc.btnAdd.Enabled = true;
+            control_CungUng.btnAdd.Enabled = true;
+            control_NCC.btnAdd.Enabled = true;
+            control_NhanVien.btnAdd.Enabled = true;
+            control_SanPham.btnAdd.Enabled = true;
+            control_ThuongHieu.btnAdd.Enabled = true;
         }
 
     }

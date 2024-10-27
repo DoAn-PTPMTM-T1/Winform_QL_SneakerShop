@@ -16,7 +16,16 @@ namespace ModernGUI_V3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+
+            string connectionString = Properties.Settings.Default.STRConn;
+            if (connectionString.Contains("Initial Catalog=ShopSneaker"))
+            {
+                Application.Run(new Login());
+            }
+            else
+            {
+                Application.Run(new FConfig());
+            }
         }
     }
 }

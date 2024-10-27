@@ -14,10 +14,16 @@ namespace ModernGUI_V3
 {
     public partial class FormPrincipal : Form
     {
-        public FormPrincipal()
+        public string manv, hoten, chucvu;
+        public FormPrincipal(string manv, string hoten, string chucvu)
         {
             InitializeComponent();
             UIStyles.CultureInfo = CultureInfos.en_US;
+
+            this.manv = manv;
+            this.hoten = hoten;
+            this.chucvu = chucvu;
+            txtTenNhanVien.Text = hoten;
         }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
@@ -156,19 +162,21 @@ namespace ModernGUI_V3
         #endregion
 
         #region Xử lí mở form
-        private void AbrirFormulario<MiForm>() where MiForm : Form, new() {
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        {
             DongForm();
 
             Form formulario;
             formulario = panelformularios.Controls.OfType<MiForm>().FirstOrDefault();
             if (formulario == null)
             {
-                formulario = new MiForm();
+                formulario = new MiForm { Owner = this };
                 formulario.TopLevel = false;
                 formulario.Dock = DockStyle.Fill;
                 panelformularios.Controls.Add(formulario);
                 panelformularios.Tag = formulario;
                 formulario.Show();
+
                 switch (formulario)
                 {
                     case FBanHang banHangForm:
@@ -198,10 +206,11 @@ namespace ModernGUI_V3
                 formulario.Activate();
             }
         }
-        
+
+
         private void btnBanHang_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FBanHang>();
+            AbrirFormulario<FBanHang>(); 
         }
 
         private void btnQuanLi_Click(object sender, EventArgs e)
@@ -224,10 +233,31 @@ namespace ModernGUI_V3
             AbrirFormulario<FThongKe>();
         }
 
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login login = new Login();
+            login.Visible = true;
+        }
+
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FCaiDat>();
         }
+
+        public void MoForm_KH()
+        {
+            panelformularios.Controls.Remove(form_BanHang);
+            FKhachHang kh = new FKhachHang();
+            kh.TopLevel = false;
+            kh.Dock = DockStyle.Fill;
+            panelformularios.Controls.Add(kh);
+            panelformularios.Tag = kh;
+            kh.Show();
+
+            form_KhachHang = kh;
+        }
+
         #endregion
 
     }

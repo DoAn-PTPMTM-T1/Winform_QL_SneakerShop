@@ -63,3 +63,7 @@ D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL
 D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.csproj.CopyComplete
 D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.exe
 D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.pdb
+D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.Login.resources
+D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\User.dll
+D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\User.pdb
+D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.FConfig.resources

@@ -16,5 +16,12 @@ namespace ModernGUI_V3
         {
             InitializeComponent();
         }
+        string manv;
+        private void FNhapHang_Load(object sender, EventArgs e)
+        {
+            FormPrincipal mainForm = this.Owner as FormPrincipal;
+            manv = mainForm.manv;
+            txtMaNV.Text = mainForm.manv;
+        }
     }
 }

@@ -23,14 +23,15 @@ namespace ModernGUI_V3.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-986S66O;Initial Catalog=ShopSneaker;Persist Security Info=Tru" +
-            "e;User ID=sa;Password=123")]
-        public string ShopSneakerConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=DESKTOP-986S66O; Database=; User ID=sa; Pwd=123")]
+        public string STRConn {
             get {
-                return ((string)(this["ShopSneakerConnectionString"]));
+                return ((string)(this["STRConn"]));
+            }
+            set {
+                this["STRConn"] = value;
             }
         }
     }

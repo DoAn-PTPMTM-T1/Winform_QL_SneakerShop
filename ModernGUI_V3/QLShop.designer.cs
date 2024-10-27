@@ -81,7 +81,7 @@ namespace ModernGUI_V3
     #endregion
 		
 		public QLShopDataContext() : 
-				base(global::ModernGUI_V3.Properties.Settings.Default.ShopSneakerConnectionString, mappingSource)
+				base(global::ModernGUI_V3.Properties.Settings.Default.STRConn, mappingSource)
 		{
 			OnCreated();
 		}
@@ -2182,7 +2182,15 @@ namespace ModernGUI_V3
 		
 		private string _TenNhaCungCap;
 		
+		private string _DienThoai;
+		
+		private string _Email;
+		
+		private string _Diachi;
+		
 		private EntitySet<CUNGUNG> _CUNGUNGs;
+		
+		private EntitySet<PhieuNhap> _PhieuNhaps;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2192,11 +2200,18 @@ namespace ModernGUI_V3
     partial void OnMaNhaCungCapChanged();
     partial void OnTenNhaCungCapChanging(string value);
     partial void OnTenNhaCungCapChanged();
+    partial void OnDienThoaiChanging(string value);
+    partial void OnDienThoaiChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnDiachiChanging(string value);
+    partial void OnDiachiChanged();
     #endregion
 		
 		public NhaCungCap()
 		{
 			this._CUNGUNGs = new EntitySet<CUNGUNG>(new Action<CUNGUNG>(this.attach_CUNGUNGs), new Action<CUNGUNG>(this.detach_CUNGUNGs));
+			this._PhieuNhaps = new EntitySet<PhieuNhap>(new Action<PhieuNhap>(this.attach_PhieuNhaps), new Action<PhieuNhap>(this.detach_PhieuNhaps));
 			OnCreated();
 		}
 		
@@ -2240,6 +2255,66 @@ namespace ModernGUI_V3
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DienThoai", DbType="VarChar(10)")]
+		public string DienThoai
+		{
+			get
+			{
+				return this._DienThoai;
+			}
+			set
+			{
+				if ((this._DienThoai != value))
+				{
+					this.OnDienThoaiChanging(value);
+					this.SendPropertyChanging();
+					this._DienThoai = value;
+					this.SendPropertyChanged("DienThoai");
+					this.OnDienThoaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(20)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diachi", DbType="NVarChar(100)")]
+		public string Diachi
+		{
+			get
+			{
+				return this._Diachi;
+			}
+			set
+			{
+				if ((this._Diachi != value))
+				{
+					this.OnDiachiChanging(value);
+					this.SendPropertyChanging();
+					this._Diachi = value;
+					this.SendPropertyChanged("Diachi");
+					this.OnDiachiChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhaCungCap_CUNGUNG", Storage="_CUNGUNGs", ThisKey="MaNhaCungCap", OtherKey="MaNCC")]
 		public EntitySet<CUNGUNG> CUNGUNGs
 		{
@@ -2250,6 +2325,19 @@ namespace ModernGUI_V3
 			set
 			{
 				this._CUNGUNGs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhaCungCap_PhieuNhap", Storage="_PhieuNhaps", ThisKey="MaNhaCungCap", OtherKey="MaNhaCungCap")]
+		public EntitySet<PhieuNhap> PhieuNhaps
+		{
+			get
+			{
+				return this._PhieuNhaps;
+			}
+			set
+			{
+				this._PhieuNhaps.Assign(value);
 			}
 		}
 		
@@ -2280,6 +2368,18 @@ namespace ModernGUI_V3
 		}
 		
 		private void detach_CUNGUNGs(CUNGUNG entity)
+		{
+			this.SendPropertyChanging();
+			entity.NhaCungCap = null;
+		}
+		
+		private void attach_PhieuNhaps(PhieuNhap entity)
+		{
+			this.SendPropertyChanging();
+			entity.NhaCungCap = this;
+		}
+		
+		private void detach_PhieuNhaps(PhieuNhap entity)
 		{
 			this.SendPropertyChanging();
 			entity.NhaCungCap = null;
@@ -2898,6 +2998,8 @@ namespace ModernGUI_V3
 		
 		private string _MaNhanVien;
 		
+		private string _MaNhaCungCap;
+		
 		private System.Nullable<System.DateTime> _NgayPhieuNhap;
 		
 		private System.Nullable<decimal> _TongTien;
@@ -2905,6 +3007,8 @@ namespace ModernGUI_V3
 		private EntitySet<ChiTietPhieuNhap> _ChiTietPhieuNhaps;
 		
 		private EntityRef<NhanVien> _NhanVien;
+		
+		private EntityRef<NhaCungCap> _NhaCungCap;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2914,6 +3018,8 @@ namespace ModernGUI_V3
     partial void OnMaPhieuNhapChanged();
     partial void OnMaNhanVienChanging(string value);
     partial void OnMaNhanVienChanged();
+    partial void OnMaNhaCungCapChanging(string value);
+    partial void OnMaNhaCungCapChanged();
     partial void OnNgayPhieuNhapChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayPhieuNhapChanged();
     partial void OnTongTienChanging(System.Nullable<decimal> value);
@@ -2924,6 +3030,7 @@ namespace ModernGUI_V3
 		{
 			this._ChiTietPhieuNhaps = new EntitySet<ChiTietPhieuNhap>(new Action<ChiTietPhieuNhap>(this.attach_ChiTietPhieuNhaps), new Action<ChiTietPhieuNhap>(this.detach_ChiTietPhieuNhaps));
 			this._NhanVien = default(EntityRef<NhanVien>);
+			this._NhaCungCap = default(EntityRef<NhaCungCap>);
 			OnCreated();
 		}
 		
@@ -2967,6 +3074,30 @@ namespace ModernGUI_V3
 					this._MaNhanVien = value;
 					this.SendPropertyChanged("MaNhanVien");
 					this.OnMaNhanVienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhaCungCap", DbType="VarChar(25)")]
+		public string MaNhaCungCap
+		{
+			get
+			{
+				return this._MaNhaCungCap;
+			}
+			set
+			{
+				if ((this._MaNhaCungCap != value))
+				{
+					if (this._NhaCungCap.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaNhaCungCapChanging(value);
+					this.SendPropertyChanging();
+					this._MaNhaCungCap = value;
+					this.SendPropertyChanged("MaNhaCungCap");
+					this.OnMaNhaCungCapChanged();
 				}
 			}
 		}
@@ -3054,6 +3185,40 @@ namespace ModernGUI_V3
 						this._MaNhanVien = default(string);
 					}
 					this.SendPropertyChanged("NhanVien");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhaCungCap_PhieuNhap", Storage="_NhaCungCap", ThisKey="MaNhaCungCap", OtherKey="MaNhaCungCap", IsForeignKey=true)]
+		public NhaCungCap NhaCungCap
+		{
+			get
+			{
+				return this._NhaCungCap.Entity;
+			}
+			set
+			{
+				NhaCungCap previousValue = this._NhaCungCap.Entity;
+				if (((previousValue != value) 
+							|| (this._NhaCungCap.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NhaCungCap.Entity = null;
+						previousValue.PhieuNhaps.Remove(this);
+					}
+					this._NhaCungCap.Entity = value;
+					if ((value != null))
+					{
+						value.PhieuNhaps.Add(this);
+						this._MaNhaCungCap = value.MaNhaCungCap;
+					}
+					else
+					{
+						this._MaNhaCungCap = default(string);
+					}
+					this.SendPropertyChanged("NhaCungCap");
 				}
 			}
 		}

@@ -32,7 +32,7 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelformularios = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnTenNhanVien = new System.Windows.Forms.Button();
+            this.txtTenNhanVien = new System.Windows.Forms.Button();
             this.btnTrangChu = new System.Windows.Forms.Button();
             this.btnBanHang = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
@@ -82,7 +82,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(49)))), ((int)(((byte)(83)))));
-            this.panelMenu.Controls.Add(this.btnTenNhanVien);
+            this.panelMenu.Controls.Add(this.txtTenNhanVien);
             this.panelMenu.Controls.Add(this.btnTrangChu);
             this.panelMenu.Controls.Add(this.btnBanHang);
             this.panelMenu.Controls.Add(this.btnDangXuat);
@@ -98,24 +98,24 @@
             this.panelMenu.Size = new System.Drawing.Size(183, 761);
             this.panelMenu.TabIndex = 1;
             // 
-            // btnTenNhanVien
+            // txtTenNhanVien
             // 
-            this.btnTenNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnTenNhanVien.FlatAppearance.BorderSize = 0;
-            this.btnTenNhanVien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.btnTenNhanVien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
-            this.btnTenNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTenNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTenNhanVien.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnTenNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTenNhanVien.Location = new System.Drawing.Point(0, 712);
-            this.btnTenNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTenNhanVien.Name = "btnTenNhanVien";
-            this.btnTenNhanVien.Size = new System.Drawing.Size(183, 49);
-            this.btnTenNhanVien.TabIndex = 8;
-            this.btnTenNhanVien.Text = "Tên nhân viên";
-            this.btnTenNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTenNhanVien.UseVisualStyleBackColor = true;
+            this.txtTenNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtTenNhanVien.FlatAppearance.BorderSize = 0;
+            this.txtTenNhanVien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.txtTenNhanVien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.txtTenNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtTenNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNhanVien.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtTenNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtTenNhanVien.Location = new System.Drawing.Point(0, 712);
+            this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTenNhanVien.Name = "txtTenNhanVien";
+            this.txtTenNhanVien.Size = new System.Drawing.Size(183, 49);
+            this.txtTenNhanVien.TabIndex = 8;
+            this.txtTenNhanVien.Text = "Tên nhân viên";
+            this.txtTenNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.txtTenNhanVien.UseVisualStyleBackColor = true;
             // 
             // btnTrangChu
             // 
@@ -174,6 +174,7 @@
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnCaiDat
             // 
@@ -367,6 +368,7 @@
             this.ClientSize = new System.Drawing.Size(1500, 800);
             this.Controls.Add(this.panelContenedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(651, 400);
             this.Name = "FormPrincipal";
@@ -403,7 +405,7 @@
         private System.Windows.Forms.Button btnTrangChu;
         private System.Windows.Forms.Button btnBanHang;
         private System.Windows.Forms.Button btnDangXuat;
-        private System.Windows.Forms.Button btnTenNhanVien;
+        private System.Windows.Forms.Button txtTenNhanVien;
         private Sunny.UI.UILabel uiLabel1;
     }
 }
