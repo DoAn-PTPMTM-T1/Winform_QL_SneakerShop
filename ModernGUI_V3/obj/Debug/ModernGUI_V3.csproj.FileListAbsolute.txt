@@ -67,3 +67,37 @@ D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL
 D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\User.dll
 D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\User.pdb
 D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.FConfig.resources
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\ModernGUI_V3.exe.config
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\ModernGUI_V3.exe
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\ModernGUI_V3.pdb
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\SunnyUI.Common.dll
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\SunnyUI.dll
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\User.pdb
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.csproj.AssemblyReference.cache
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.csproj.SuggestedBindingRedirects.cache
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.FBanHang.resources
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.FCaiDat.resources
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.FConfig.resources
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.FQuanLi.resources
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.FKhachHang.resources
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.FormPrincipal.resources
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.FNhapHang.resources
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.FThongKe.resources
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.Login.resources
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.Properties.Resources.resources
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.csproj.GenerateResource.cache
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.csproj.CoreCompileInputs.cache
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.csproj.CopyComplete
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.exe
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.pdb
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\AForge.dll
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\AForge.Video.DirectShow.dll
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\AForge.Video.dll
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\zxing.dll
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\zxing.presentation.dll
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\AForge.xml
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\AForge.Video.xml
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\AForge.Video.DirectShow.xml
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\zxing.xml
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\zxing.presentation.xml
+F:\Của t\DOANPTPMTM\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.csproj.ResolveComReference.cache

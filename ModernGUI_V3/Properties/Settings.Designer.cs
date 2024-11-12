@@ -12,7 +12,7 @@ namespace ModernGUI_V3.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.4.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,13 +25,44 @@ namespace ModernGUI_V3.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=DESKTOP-986S66O; Database=; User ID=sa; Pwd=123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=DESKTOP-O3NQ36D; User ID=sa; Pwd=123")]
         public string STRConn {
             get {
                 return ((string)(this["STRConn"]));
             }
             set {
                 this["STRConn"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-O3NQ36D;Initial Catalog=ShopSneaker;Persist Security Info=Tru" +
+            "e;User ID=sa")]
+        public string ShopSneakerConnectionString {
+            get {
+                return ((string)(this["ShopSneakerConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-O3NQ36D;Initial Catalog=ShopSneaker;User ID=sa;Password=123")]
+        public string ShopSneakerConnectionString1 {
+            get {
+                return ((string)(this["ShopSneakerConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-O3NQ36D;Initial Catalog=ShopSneaker;User ID=sa;Password=123")]
+        public string ShopSneakerConnectionString2 {
+            get {
+                return ((string)(this["ShopSneakerConnectionString2"]));
             }
         }
     }

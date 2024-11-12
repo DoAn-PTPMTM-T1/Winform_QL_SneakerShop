@@ -16,7 +16,7 @@ namespace ModernGUI_V3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+          
             string connectionString = Properties.Settings.Default.STRConn;
             if (connectionString.Contains("Initial Catalog=ShopSneaker"))
             {

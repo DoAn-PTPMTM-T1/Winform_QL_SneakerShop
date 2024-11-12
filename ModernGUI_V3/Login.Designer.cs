@@ -180,7 +180,9 @@ namespace ModernGUI_V3
             // txtPass
             // 
             this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPass.DoubleValue = 12345678D;
             this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtPass.IntValue = 12345678;
             this.txtPass.Location = new System.Drawing.Point(70, 5);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPass.MinimumSize = new System.Drawing.Size(1, 16);
@@ -190,6 +192,7 @@ namespace ModernGUI_V3
             this.txtPass.ShowText = false;
             this.txtPass.Size = new System.Drawing.Size(283, 29);
             this.txtPass.TabIndex = 1;
+            this.txtPass.Text = "12345678";
             this.txtPass.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtPass.Watermark = "";
             // 
@@ -236,6 +239,7 @@ namespace ModernGUI_V3
             this.txtUser.ShowText = false;
             this.txtUser.Size = new System.Drawing.Size(283, 29);
             this.txtUser.TabIndex = 0;
+            this.txtUser.Text = "NV01";
             this.txtUser.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtUser.Watermark = "";
             // 
