@@ -81,7 +81,7 @@ namespace ModernGUI_V3
     #endregion
 		
 		public QLShopDataContext() : 
-				base(global::ModernGUI_V3.Properties.Settings.Default.STRConn, mappingSource)
+				base(global::ModernGUI_V3.Properties.Settings.Default.ShopSneakerConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -237,6 +237,14 @@ namespace ModernGUI_V3
 				return this.GetTable<SanPham>();
 			}
 		}
+		
+		public System.Data.Linq.Table<v_PN> v_PNs
+		{
+			get
+			{
+				return this.GetTable<v_PN>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietHoaDon")]
@@ -252,6 +260,8 @@ namespace ModernGUI_V3
 		private System.Nullable<int> _SoLuong;
 		
 		private System.Nullable<decimal> _Gia;
+		
+		private System.Nullable<decimal> _Thanhtien;
 		
 		private EntityRef<HoaDon> _HoaDon;
 		
@@ -269,6 +279,8 @@ namespace ModernGUI_V3
     partial void OnSoLuongChanged();
     partial void OnGiaChanging(System.Nullable<decimal> value);
     partial void OnGiaChanged();
+    partial void OnThanhtienChanging(System.Nullable<decimal> value);
+    partial void OnThanhtienChanged();
     #endregion
 		
 		public ChiTietHoaDon()
@@ -362,6 +374,26 @@ namespace ModernGUI_V3
 					this._Gia = value;
 					this.SendPropertyChanged("Gia");
 					this.OnGiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Thanhtien", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> Thanhtien
+		{
+			get
+			{
+				return this._Thanhtien;
+			}
+			set
+			{
+				if ((this._Thanhtien != value))
+				{
+					this.OnThanhtienChanging(value);
+					this.SendPropertyChanging();
+					this._Thanhtien = value;
+					this.SendPropertyChanged("Thanhtien");
+					this.OnThanhtienChanged();
 				}
 			}
 		}
@@ -3697,6 +3729,123 @@ namespace ModernGUI_V3
 		{
 			this.SendPropertyChanging();
 			entity.SanPham = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_PN")]
+	public partial class v_PN
+	{
+		
+		private System.Nullable<int> _SoLuong;
+		
+		private System.Nullable<decimal> _GiaVon;
+		
+		private string _TenSanPham;
+		
+		private string _MaSanPham;
+		
+		private string _MaPhieuNhap;
+		
+		private string _MaNhaCungCap;
+		
+		public v_PN()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int")]
+		public System.Nullable<int> SoLuong
+		{
+			get
+			{
+				return this._SoLuong;
+			}
+			set
+			{
+				if ((this._SoLuong != value))
+				{
+					this._SoLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaVon", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> GiaVon
+		{
+			get
+			{
+				return this._GiaVon;
+			}
+			set
+			{
+				if ((this._GiaVon != value))
+				{
+					this._GiaVon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSanPham", DbType="NVarChar(100)")]
+		public string TenSanPham
+		{
+			get
+			{
+				return this._TenSanPham;
+			}
+			set
+			{
+				if ((this._TenSanPham != value))
+				{
+					this._TenSanPham = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSanPham", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MaSanPham
+		{
+			get
+			{
+				return this._MaSanPham;
+			}
+			set
+			{
+				if ((this._MaSanPham != value))
+				{
+					this._MaSanPham = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPhieuNhap", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string MaPhieuNhap
+		{
+			get
+			{
+				return this._MaPhieuNhap;
+			}
+			set
+			{
+				if ((this._MaPhieuNhap != value))
+				{
+					this._MaPhieuNhap = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhaCungCap", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string MaNhaCungCap
+		{
+			get
+			{
+				return this._MaNhaCungCap;
+			}
+			set
+			{
+				if ((this._MaNhaCungCap != value))
+				{
+					this._MaNhaCungCap = value;
+				}
+			}
 		}
 	}
 }

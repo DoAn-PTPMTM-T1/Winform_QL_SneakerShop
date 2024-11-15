@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="SunnyUI, Version=3.7.2.0, Culture=neutral, PublicKeyToken=27d7d2e821d97aeb, processorArchitecture=MSIL">
       <HintPath>..\packages\SunnyUI.3.7.2\lib\net40\SunnyUI.dll</HintPath>
     </Reference>
@@ -44,6 +52,7 @@
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,10 +64,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="User, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\btl\05_LeTanAnhHao_Tuan2\User\bin\Debug\User.dll</HintPath>
+      <HintPath>bin\Debug\User.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConvertUltil.cs" />
     <Compile Include="FBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +123,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="PN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PN.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLShop.designer.cs">
@@ -120,6 +135,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLShop.dbml</DependentUpon>
     </Compile>
+    <Compile Include="WordExport.cs" />
     <EmbeddedResource Include="FBanHang.resx">
       <DependentUpon>FBanHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +173,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="PN.xsc">
+      <DependentUpon>PN.xsd</DependentUpon>
+    </None>
+    <None Include="PN.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PN.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PN.xss">
+      <DependentUpon>PN.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

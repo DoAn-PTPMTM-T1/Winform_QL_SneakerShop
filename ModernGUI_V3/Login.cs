@@ -70,7 +70,7 @@ namespace ModernGUI_V3
 
                     if (user != null)
                     {
-                        FormPrincipal nv = new FormPrincipal(user.MaNhanVien, user.HoTen, user.MaChucVu);
+                        FormPrincipal nv = new FormPrincipal(user.MaNhanVien, user.HoTen, user.MaChucVu, user.MaLoaiTaiKhoan);
                         nv.Show();
                         this.Hide();
                     }
