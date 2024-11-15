@@ -11,16 +11,100 @@ namespace ModernGUI_V3
     public partial class FThongKe : Form
     {
         QLShopDataContext qlss = new QLShopDataContext();
+        ProductModelBuilder modelBuilder = new ProductModelBuilder();
+
+        int currentYear = DateTime.Now.Year;
+        int currentMonth = DateTime.Now.Month;
+        int nextMonth, nextYear;
 
         public FThongKe()
         {
             InitializeComponent();
+        }
+        private void FThongKe_Load(object sender, EventArgs e)
+        {
             int currentYear = DateTime.Now.Year;
             Load_SanPham_TheoNam(currentYear);
             Load_BarChart(currentYear);
+
+            // Xu hướng
+            nextMonth = currentMonth == 12 ? 1 : currentMonth + 1;
+            nextYear = currentMonth == 12 ? currentYear + 1 : currentYear;
+            DatePicker_MY_XuHuong.Value = new DateTime(nextYear, nextMonth, 1);
+            TrainModel();
+            Load_PieChart_XuHuong(nextYear, nextMonth);
         }
 
-        // Doanh thu 
+        #region Xu hướng
+
+        void TrainModel()
+        {
+            var salesData = (from cthd in qlss.ChiTietHoaDons
+                             join hd in qlss.HoaDons on cthd.MaHoaDon equals hd.MaHoaDon
+                             where hd.NgayHoaDon.HasValue
+                             select new ProductData
+                             {
+                                 Month = hd.NgayHoaDon.Value.Month,
+                                 ProductName = cthd.SanPham.TenSanPham,
+                                 Quantity = (int)cthd.SoLuong
+                             }).ToList();
+
+            modelBuilder.BuildAndTrain(salesData);
+        }
+
+        void Load_PieChart_XuHuong(int year, int month)
+        {
+            var actualData = from cthd in qlss.ChiTietHoaDons
+                             join sp in qlss.SanPhams on cthd.MaSanPham equals sp.MaSanPham
+                             where cthd.HoaDon.NgayHoaDon.HasValue
+                                   && cthd.HoaDon.NgayHoaDon.Value.Year == year
+                                   && cthd.HoaDon.NgayHoaDon.Value.Month == month
+                             group cthd by sp.TenSanPham into g
+                             select new
+                             {
+                                 ProductName = g.Key,
+                                 TotalQuantity = g.Sum(cthd => cthd.SoLuong)
+                             };
+
+            // Dự đoán số lượng cho từng sản phẩm sử dụng ML.NET
+            var predictedData = new List<(string productName, float predictedQuantity)>();
+
+            foreach (var item in actualData)
+            {
+                // Dự đoán số lượng cho sản phẩm sử dụng mô hình ML.NET
+                float predictedQuantity = modelBuilder.Predict(year, month, item.ProductName);
+                predictedData.Add((item.ProductName, predictedQuantity));
+            }
+
+            // Biểu đồ
+            var option = new UIPieOption();
+            option.Title = new UITitle();
+            option.Title.Text = "Dự đoán Xu hướng " + month + "/" + year;
+            option.Title.Left = UILeftAlignment.Center;
+
+            option.ToolTip.Visible = true;
+            option.Legend = new UILegend();
+            option.Legend.Orient = UIOrient.Vertical;
+            option.Legend.Top = UITopAlignment.Top;
+            option.Legend.Left = UILeftAlignment.Left;
+
+            var series = new UIPieSeries();
+            series.Name = "Dự đoán Số lượng";
+
+            foreach (var item in predictedData)
+            {
+                // Sử dụng dự đoán cho từng sản phẩm
+                series.AddData(item.productName, (double)item.predictedQuantity);
+                option.Legend.AddData(item.productName);
+            }
+
+            option.Series.Clear();
+            option.Series.Add(series);
+            PieChart_XuHuong.SetOption(option);
+        }
+        #endregion
+
+        #region Doanh thu
         void Load_BarChart(int selectedYear)
         {
             var doanhThuThang = from hd in qlss.HoaDons
@@ -154,7 +238,16 @@ namespace ModernGUI_V3
             BarChart_DoanhThu.SetOption(option);
         }
 
-        // Sản phẩm
+        private void DatePicker_Year_DoanhThu_ValueChanged(object sender, DateTime value)
+        {
+            int selectedYear = value.Year;
+
+            Load_BarChart(selectedYear);
+        }
+
+        #endregion
+
+        #region Sản phẩm
         void Load_PieChart_TheoThang(int selectedYear, int selectedMonth)
         {
             var soLuongSanPham = from cthd in qlss.ChiTietHoaDons
@@ -238,15 +331,8 @@ namespace ModernGUI_V3
 
             option.Series.Clear();
             option.Series.Add(series);
-
+           
             PieChart_DoanhThu.SetOption(option);
-        }
-
-        private void DatePicker_Year_DoanhThu_ValueChanged(object sender, DateTime value)
-        {
-            int selectedYear = value.Year;
-
-            Load_BarChart(selectedYear);
         }
 
         private void DatePicker_MY_SanPham_ValueChanged(object sender, DateTime value)
@@ -257,10 +343,14 @@ namespace ModernGUI_V3
             Load_PieChart_TheoThang(selectedYear, selectedMonth);
         }
 
+
         private void DatePicker_Year_SanPham_ValueChanged(object sender, DateTime value)
         {
             int selectedYear = value.Year;
             Load_SanPham_TheoNam(selectedYear);
         }
+
+        #endregion
+
     }
 }

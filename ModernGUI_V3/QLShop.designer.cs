@@ -28,57 +28,57 @@ namespace ModernGUI_V3
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
-		#region Extensibility Method Definitions
-		partial void OnCreated();
-		partial void InsertChiTietHoaDon(ChiTietHoaDon instance);
-		partial void UpdateChiTietHoaDon(ChiTietHoaDon instance);
-		partial void DeleteChiTietHoaDon(ChiTietHoaDon instance);
-		partial void InsertChiTietPhieuGiamGia(ChiTietPhieuGiamGia instance);
-		partial void UpdateChiTietPhieuGiamGia(ChiTietPhieuGiamGia instance);
-		partial void DeleteChiTietPhieuGiamGia(ChiTietPhieuGiamGia instance);
-		partial void InsertChiTietPhieuNhap(ChiTietPhieuNhap instance);
-		partial void UpdateChiTietPhieuNhap(ChiTietPhieuNhap instance);
-		partial void DeleteChiTietPhieuNhap(ChiTietPhieuNhap instance);
-		partial void InsertChucVu(ChucVu instance);
-		partial void UpdateChucVu(ChucVu instance);
-		partial void DeleteChucVu(ChucVu instance);
-		partial void InsertCUNGUNG(CUNGUNG instance);
-		partial void UpdateCUNGUNG(CUNGUNG instance);
-		partial void DeleteCUNGUNG(CUNGUNG instance);
-		partial void InsertDanhMuc(DanhMuc instance);
-		partial void UpdateDanhMuc(DanhMuc instance);
-		partial void DeleteDanhMuc(DanhMuc instance);
-		partial void InsertHinhThucThanhToan(HinhThucThanhToan instance);
-		partial void UpdateHinhThucThanhToan(HinhThucThanhToan instance);
-		partial void DeleteHinhThucThanhToan(HinhThucThanhToan instance);
-		partial void InsertHoaDon(HoaDon instance);
-		partial void UpdateHoaDon(HoaDon instance);
-		partial void DeleteHoaDon(HoaDon instance);
-		partial void InsertKhachHang(KhachHang instance);
-		partial void UpdateKhachHang(KhachHang instance);
-		partial void DeleteKhachHang(KhachHang instance);
-		partial void InsertLoaiTaiKhoan(LoaiTaiKhoan instance);
-		partial void UpdateLoaiTaiKhoan(LoaiTaiKhoan instance);
-		partial void DeleteLoaiTaiKhoan(LoaiTaiKhoan instance);
-		partial void InsertNhaCungCap(NhaCungCap instance);
-		partial void UpdateNhaCungCap(NhaCungCap instance);
-		partial void DeleteNhaCungCap(NhaCungCap instance);
-		partial void InsertNhanVien(NhanVien instance);
-		partial void UpdateNhanVien(NhanVien instance);
-		partial void DeleteNhanVien(NhanVien instance);
-		partial void InsertPhieuGiamGia(PhieuGiamGia instance);
-		partial void UpdatePhieuGiamGia(PhieuGiamGia instance);
-		partial void DeletePhieuGiamGia(PhieuGiamGia instance);
-		partial void InsertPhieuNhap(PhieuNhap instance);
-		partial void UpdatePhieuNhap(PhieuNhap instance);
-		partial void DeletePhieuNhap(PhieuNhap instance);
-		partial void InsertSanPham(SanPham instance);
-		partial void UpdateSanPham(SanPham instance);
-		partial void DeleteSanPham(SanPham instance);
-		partial void InsertThuongHieu(ThuongHieu instance);
-		partial void UpdateThuongHieu(ThuongHieu instance);
-		partial void DeleteThuongHieu(ThuongHieu instance);
-		#endregion
+    #region Extensibility Method Definitions
+    partial void OnCreated();
+    partial void InsertChiTietHoaDon(ChiTietHoaDon instance);
+    partial void UpdateChiTietHoaDon(ChiTietHoaDon instance);
+    partial void DeleteChiTietHoaDon(ChiTietHoaDon instance);
+    partial void InsertChiTietPhieuGiamGia(ChiTietPhieuGiamGia instance);
+    partial void UpdateChiTietPhieuGiamGia(ChiTietPhieuGiamGia instance);
+    partial void DeleteChiTietPhieuGiamGia(ChiTietPhieuGiamGia instance);
+    partial void InsertChiTietPhieuNhap(ChiTietPhieuNhap instance);
+    partial void UpdateChiTietPhieuNhap(ChiTietPhieuNhap instance);
+    partial void DeleteChiTietPhieuNhap(ChiTietPhieuNhap instance);
+    partial void InsertChucVu(ChucVu instance);
+    partial void UpdateChucVu(ChucVu instance);
+    partial void DeleteChucVu(ChucVu instance);
+    partial void InsertCUNGUNG(CUNGUNG instance);
+    partial void UpdateCUNGUNG(CUNGUNG instance);
+    partial void DeleteCUNGUNG(CUNGUNG instance);
+    partial void InsertDanhMuc(DanhMuc instance);
+    partial void UpdateDanhMuc(DanhMuc instance);
+    partial void DeleteDanhMuc(DanhMuc instance);
+    partial void InsertHinhThucThanhToan(HinhThucThanhToan instance);
+    partial void UpdateHinhThucThanhToan(HinhThucThanhToan instance);
+    partial void DeleteHinhThucThanhToan(HinhThucThanhToan instance);
+    partial void InsertHoaDon(HoaDon instance);
+    partial void UpdateHoaDon(HoaDon instance);
+    partial void DeleteHoaDon(HoaDon instance);
+    partial void InsertKhachHang(KhachHang instance);
+    partial void UpdateKhachHang(KhachHang instance);
+    partial void DeleteKhachHang(KhachHang instance);
+    partial void InsertLoaiTaiKhoan(LoaiTaiKhoan instance);
+    partial void UpdateLoaiTaiKhoan(LoaiTaiKhoan instance);
+    partial void DeleteLoaiTaiKhoan(LoaiTaiKhoan instance);
+    partial void InsertNhaCungCap(NhaCungCap instance);
+    partial void UpdateNhaCungCap(NhaCungCap instance);
+    partial void DeleteNhaCungCap(NhaCungCap instance);
+    partial void InsertNhanVien(NhanVien instance);
+    partial void UpdateNhanVien(NhanVien instance);
+    partial void DeleteNhanVien(NhanVien instance);
+    partial void InsertPhieuGiamGia(PhieuGiamGia instance);
+    partial void UpdatePhieuGiamGia(PhieuGiamGia instance);
+    partial void DeletePhieuGiamGia(PhieuGiamGia instance);
+    partial void InsertPhieuNhap(PhieuNhap instance);
+    partial void UpdatePhieuNhap(PhieuNhap instance);
+    partial void DeletePhieuNhap(PhieuNhap instance);
+    partial void InsertSanPham(SanPham instance);
+    partial void UpdateSanPham(SanPham instance);
+    partial void DeleteSanPham(SanPham instance);
+    partial void InsertThuongHieu(ThuongHieu instance);
+    partial void UpdateThuongHieu(ThuongHieu instance);
+    partial void DeleteThuongHieu(ThuongHieu instance);
+    #endregion
 		
 		public QLShopDataContext() : 
 				base(global::ModernGUI_V3.Properties.Settings.Default.ShopSneakerConnectionString, mappingSource)
@@ -243,8 +243,9 @@ namespace ModernGUI_V3
 			get
 			{
 				return this.GetTable<ThongTinHoaDon>();
-				}
+			}
 		}
+		
 		public System.Data.Linq.Table<v_PN> v_PNs
 		{
 			get
@@ -3742,24 +3743,24 @@ namespace ModernGUI_V3
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ThongTinHoaDon")]
 	public partial class ThongTinHoaDon
 	{
-
+		
 		private string _MaHoaDon;
-
+		
 		private string _MaSanPham;
-
+		
 		private string _TenSanPham;
-
+		
 		private System.Nullable<int> _SoLuong;
-
+		
 		private System.Nullable<decimal> _Gia;
-
+		
 		private System.Nullable<decimal> _Thanhtien;
-
+		
 		public ThongTinHoaDon()
 		{
 		}
-
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MaHoaDon", DbType = "VarChar(100) NOT NULL", CanBeNull = false)]
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHoaDon", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
 		public string MaHoaDon
 		{
 			get
@@ -3774,8 +3775,8 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MaSanPham", DbType = "VarChar(10) NOT NULL", CanBeNull = false)]
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSanPham", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
 		public string MaSanPham
 		{
 			get
@@ -3790,8 +3791,8 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_TenSanPham", DbType = "NVarChar(100)")]
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSanPham", DbType="NVarChar(100)")]
 		public string TenSanPham
 		{
 			get
@@ -3806,7 +3807,7 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-	
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int")]
 		public System.Nullable<int> SoLuong
 		{
@@ -3855,27 +3856,28 @@ namespace ModernGUI_V3
 			}
 		}
 	}
-	[global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.v_PN")]
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_PN")]
 	public partial class v_PN
 	{
-
+		
 		private System.Nullable<int> _SoLuong;
-
+		
 		private System.Nullable<decimal> _GiaVon;
-
+		
 		private string _TenSanPham;
-
+		
 		private string _MaSanPham;
-
+		
 		private string _MaPhieuNhap;
-
+		
 		private string _MaNhaCungCap;
-
+		
 		public v_PN()
 		{
 		}
-
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_SoLuong", DbType = "Int")]
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int")]
 		public System.Nullable<int> SoLuong
 		{
 			get
@@ -3890,8 +3892,8 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_GiaVon", DbType = "Decimal(18,0)")]
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaVon", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> GiaVon
 		{
 			get
@@ -3906,8 +3908,8 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_TenSanPham", DbType = "NVarChar(100)")]
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSanPham", DbType="NVarChar(100)")]
 		public string TenSanPham
 		{
 			get
@@ -3922,8 +3924,8 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MaSanPham", DbType = "VarChar(10) NOT NULL", CanBeNull = false)]
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSanPham", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
 		public string MaSanPham
 		{
 			get
@@ -3938,8 +3940,8 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MaPhieuNhap", DbType = "VarChar(100) NOT NULL", CanBeNull = false)]
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPhieuNhap", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
 		public string MaPhieuNhap
 		{
 			get
@@ -3954,8 +3956,8 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MaNhaCungCap", DbType = "VarChar(25) NOT NULL", CanBeNull = false)]
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhaCungCap", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
 		public string MaNhaCungCap
 		{
 			get

@@ -141,6 +141,7 @@ namespace ModernGUI_V3
                     txtMaHD.Text = maHD;
                     btnTaoHD.Enabled = false;
                     panelCTHD.Enabled = true;
+                    cboHinhThucThanhToan.Enabled = true;
                 }
                 else
                     MessageBox.Show("Vui lòng nhập thông tin khách hàng");
@@ -207,9 +208,8 @@ namespace ModernGUI_V3
             txtMaGiamGia.Clear();
             btnTaoHD.Enabled = true;
             panelCTHD.Enabled = false;
+            cboHinhThucThanhToan.Enabled = false;
         }
-      
-
         
         private void btnAdd_CTHD_Click(object sender, EventArgs e)
         {
@@ -472,7 +472,7 @@ namespace ModernGUI_V3
                     qlshop.SubmitChanges();
                     MessageBox.Show("Lưu hóa đơn thành công!");
 
-                    
+
                     foreach (DataGridViewRow row in grvCTHD.Rows)
                     {
                         if (row.Cells["MaSanPham"].Value != null)
@@ -480,12 +480,12 @@ namespace ModernGUI_V3
                             string maSP = row.Cells["MaSanPham"].Value.ToString();
                             int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value);
 
-                         
+
                             var sanPham = qlshop.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSP);
                             if (sanPham != null)
                             {
                                 // Cập nhật tồn kho
-                                sanPham.TonKho -= soLuong; 
+                                sanPham.TonKho -= soLuong;
                             }
                         }
                     }
@@ -506,13 +506,15 @@ namespace ModernGUI_V3
                             qlshop.ChiTietPhieuGiamGias.InsertOnSubmit(chiTietGiamGia);
                         }
                     }
-                   
+
                     qlshop.SubmitChanges();
                     MessageBox.Show("Lưu hóa đơn thành công!", "Thông báo",
-               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnInHD.Enabled = true;
                     btnTaoHD.Enabled = true;
                     panelCTHD.Enabled = false;
+                    resetForm();
+                    ResetText();
                 }
                 else
                 {
@@ -525,8 +527,6 @@ namespace ModernGUI_V3
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
-
-       
 
         private void btnInHD_Click(object sender, EventArgs e)
         {
@@ -652,6 +652,22 @@ namespace ModernGUI_V3
             txtDonGia.Text="0.00";
             grvCTHD.Rows.Clear();
             txtMaSP.Enabled = false;
+            cboHinhThucThanhToan.Enabled = false;
+        }
+
+        private void btnTimKH_Click(object sender, EventArgs e)
+        {
+            var khach = (from kh in qlshop.KhachHangs
+                         where kh.SoDienThoai == txtSDT_KH.Text
+                         select kh).FirstOrDefault();
+            if (khach != null)
+            {
+                txtMaKH.Text = khach.MaKhachHang;
+            }
+            else
+            {
+                txtMaKH.Text = "KHVL";
+            }
         }
     }
 }

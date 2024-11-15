@@ -27,6 +27,8 @@ namespace ModernGUI_V3
             load_grvNCC();
             load_KM();
             Enable_KM();
+            load_cboBox_CungUng();
+            load_grvCungUng();
         }
 
         void Enable_Control_banDau()
@@ -36,6 +38,8 @@ namespace ModernGUI_V3
 
             // Cung ứng
             control_CungUng.btnAdd.Enabled = true;
+            control_CungUng.btnDelete.Enabled = true;
+            control_CungUng.btnEdit.Enabled = true;
 
             // Nhà cung cấp
             control_NCC.btnAdd.Enabled = true;
@@ -63,6 +67,203 @@ namespace ModernGUI_V3
             control_SanPham.btnEdit.Enabled = true;
             control_SanPham.btnCancel.Enabled = true;
         }
+
+        #region Cung ứng
+        void enable_control_CungUng(bool x)
+        {
+            control_CungUng.btnAdd.Enabled = !x;
+            control_CungUng.btnDelete.Enabled = !x;
+            control_CungUng.btnEdit.Enabled = !x;
+            control_CungUng.btnCancel.Enabled = x;
+            control_CungUng.btnClose.Enabled = x;
+            control_CungUng.btnSubmit.Enabled = x;
+        }
+        void load_grvCungUng()
+        {
+            grvCungUng.AutoGenerateColumns = false;
+
+            var tbl_CUng = from cungUng in qlss.CUNGUNGs
+                           join nhaCungCap in qlss.NhaCungCaps on cungUng.MaNCC equals nhaCungCap.MaNhaCungCap
+                           join sanPham in qlss.SanPhams on cungUng.MaSP equals sanPham.MaSanPham
+                           select new
+                           {
+                               MaNCC = cungUng.MaNCC,
+                               TenNCC = nhaCungCap.TenNhaCungCap,
+                               MaSP = cungUng.MaSP,
+                               TenSP = sanPham.TenSanPham,
+                               TrangThai = cungUng.TrangThai
+                           };
+
+            grvCungUng.DataSource = tbl_CUng;
+        }
+
+
+        void load_cboBox_CungUng()
+        {
+            var ncc = from nhacungcap in qlss.NhaCungCaps select nhacungcap;
+            cboNCC_CungUng.DataSource = ncc;
+            cboNCC_CungUng.DisplayMember = "TenNhaCungCap";
+            cboNCC_CungUng.ValueMember = "MaNhaCungCap";
+
+            var sp = from sanpham in qlss.SanPhams select sanpham;
+            cboSanPham_CungUng.DataSource = sp;
+            cboSanPham_CungUng.DisplayMember = "TenSanPham";
+            cboSanPham_CungUng.ValueMember = "MaSanPham";
+
+            cboTrangThai_CungUng.Items.Clear();
+            cboTrangThai_CungUng.Items.Add("True");
+            cboTrangThai_CungUng.Items.Add("False");
+        }
+
+        private void cboTimSP_CungUng_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtTimTenNCC_CungUng.Text.Trim()))
+            {
+                load_grvCungUng();
+            }
+            else
+            {
+                var Tim_NCC = from cungUng in qlss.CUNGUNGs
+                               join nhaCungCap in qlss.NhaCungCaps on cungUng.MaNCC equals nhaCungCap.MaNhaCungCap
+                               join sanPham in qlss.SanPhams on cungUng.MaSP equals sanPham.MaSanPham
+                               where nhaCungCap.TenNhaCungCap.Contains(txtTimTenNCC_CungUng.Text) 
+                               select new
+                               {
+                                   MaNCC = cungUng.MaNCC,
+                                   TenNCC = nhaCungCap.TenNhaCungCap,
+                                   MaSP = cungUng.MaSP,
+                                   TenSP = sanPham.TenSanPham,
+                                   TrangThai = cungUng.TrangThai
+                               };
+
+                if (Tim_NCC != null)
+                {
+                    grvCungUng.DataSource = Tim_NCC;
+                }
+            }
+        }
+
+        int flag_cungUng = 0;
+
+        private void control_CungUng_BtnAddClicked(object sender, EventArgs e)
+        {
+            enable_control_CungUng(true);
+            flag_cungUng = 1; // Thêm mới
+            cboNCC_CungUng.Enabled = false;
+            cboSanPham_CungUng.Enabled = true;
+            cboTrangThai_CungUng.SelectedItem = "True";
+        }
+
+        private void control_CungUng_BtnCancelClicked(object sender, EventArgs e)
+        {
+            enable_control_CungUng(false);
+            flag_cungUng = 0; // Hủy thao tác
+            cboNCC_CungUng.Enabled = false;
+            cboSanPham_CungUng.Enabled = false;
+        }
+
+        private void control_CungUng_BtnCloseClicked(object sender, EventArgs e)
+        {
+        }
+
+        private void control_CungUng_BtnDeleteClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                CUNGUNG CungUng = qlshop.CUNGUNGs.Where(x => x.MaNCC == cboNCC_CungUng.SelectedValue.ToString()
+                                                            && x.MaSP == cboSanPham_CungUng.SelectedValue.ToString()).FirstOrDefault();
+                if (CungUng != null)
+                {
+                    qlshop.CUNGUNGs.DeleteOnSubmit(CungUng);
+                    qlshop.SubmitChanges();
+                    MessageBox.Show("Xóa thành công");
+                    load_grvCungUng();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu cần xóa.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+        private void control_CungUng_BtnEditClicked(object sender, EventArgs e)
+        {
+            flag_cungUng = 2; // Sửa
+            enable_control_CungUng(true);
+            cboTrangThai_CungUng.Enabled = true;
+            cboSanPham_CungUng.Enabled = true;
+        }
+
+        private void control_CungUng_BtnSubmitClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                if (flag_cungUng == 1)
+                {
+                    // Thêm mới
+                    var newCungUng = new CUNGUNG
+                    {
+                        MaNCC = cboNCC_CungUng.SelectedValue.ToString(),
+                        MaSP = cboSanPham_CungUng.SelectedValue.ToString(),
+                        TrangThai = cboTrangThai_CungUng.SelectedItem.ToString() == "True"
+                    };
+                    qlshop.CUNGUNGs.InsertOnSubmit(newCungUng);
+                    qlshop.SubmitChanges();
+                    MessageBox.Show("Thêm thành công!");
+                }
+                else if (flag_cungUng == 2)
+                {
+                    // Sửa
+                    var CungUng = qlshop.CUNGUNGs.Where(x => x.MaNCC == cboNCC_CungUng.SelectedValue.ToString()
+                                                             && x.MaSP == cboSanPham_CungUng.SelectedValue.ToString()).FirstOrDefault();
+                    if (CungUng != null)
+                    {
+                        CungUng.TrangThai = cboTrangThai_CungUng.SelectedItem.ToString() == "True";
+                        qlshop.SubmitChanges();
+                        MessageBox.Show("Sửa thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy dữ liệu cần sửa.");
+                    }
+                }
+
+                load_grvCungUng();
+                enable_control_CungUng(false);
+                cboTrangThai_CungUng.Enabled = false;
+                cboSanPham_CungUng.Enabled = false;
+                flag_cungUng = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+
+        private void grvCungUng_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    rowIndex = grvCungUng.SelectedRows[0].Index;
+                    DataGridViewRow row = grvCungUng.Rows[e.RowIndex];
+                    cboNCC_CungUng.SelectedValue = row.Cells["MaNCC_CungUng"].Value.ToString();
+                    cboSanPham_CungUng.SelectedValue = row.Cells["MaSP_CungUng"].Value.ToString();
+                    cboTrangThai_CungUng.SelectedItem = row.Cells["TrangThai"].Value.ToString();
+                }
+            }
+            catch
+            {
+
+            }
+        }
+        #endregion
 
         #region quanlidanhmuc
         #region method
@@ -206,7 +407,6 @@ namespace ModernGUI_V3
         {
             try
             {
-                
                 string madm = txtMaDanhMuc.Text.Trim();
                 DanhMuc dm = qlshop.DanhMucs.Where(x => x.MaDanhMuc == madm).FirstOrDefault();
                 qlshop.DanhMucs.DeleteOnSubmit(dm);
@@ -964,7 +1164,6 @@ namespace ModernGUI_V3
         #endregion
 
         #region sanpham
-        #region method
         void loadSanpham()
         {
             var sanpham = from sp in qlshop.SanPhams 
@@ -1000,7 +1199,6 @@ namespace ModernGUI_V3
         }
         public string GenerateSanpham()
         {
-
             var lastCode = qlshop.SanPhams
                 .Where(dm => dm.MaSanPham.StartsWith("SP"))
                 .OrderByDescending(dm => dm.MaSanPham)
@@ -1026,7 +1224,6 @@ namespace ModernGUI_V3
                 MessageBox.Show("Không tìm thấy sản phẩm phù hợp");
             }
         }
-        #endregion
 
         #region event
         private void btnTimSP_Click(object sender, EventArgs e)
@@ -1042,8 +1239,6 @@ namespace ModernGUI_V3
                 loadSanpham();
             }
         }
-
-        #endregion
 
         #endregion
 
@@ -1200,9 +1395,9 @@ namespace ModernGUI_V3
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
+        #endregion
 
         #region nhà cung cấp
-
         void load_grvNCC()
         {
             var tbl_ncc = from ncc in qlss.NhaCungCaps select ncc;

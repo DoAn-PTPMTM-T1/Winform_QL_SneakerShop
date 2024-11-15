@@ -177,7 +177,7 @@
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Gia" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
       <Column Name="Thanhtien" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      </Type>
+    </Type>
   </Table>
   <Table Name="dbo.v_PN" Member="v_PNs">
     <Type Name="v_PN">

@@ -35,20 +35,26 @@ namespace ModernGUI_V3
             this.uiLabel12 = new Sunny.UI.UILabel();
             this.BarChart_DoanhThu = new Sunny.UI.UIBarChart();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.DatePicker_Year_SanPham = new Sunny.UI.UIDatePicker();
+            this.uiLabel1 = new Sunny.UI.UILabel();
             this.DatePicker_MY_SanPham = new Sunny.UI.UIDatePicker();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.PieChart_DoanhThu = new Sunny.UI.UIPieChart();
-            this.DatePicker_Year_SanPham = new Sunny.UI.UIDatePicker();
-            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.PieChart_XuHuong = new Sunny.UI.UIPieChart();
+            this.DatePicker_MY_XuHuong = new Sunny.UI.UIDatePicker();
+            this.uiLabel3 = new Sunny.UI.UILabel();
             this.uiTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTabControl1
             // 
             this.uiTabControl1.Controls.Add(this.tabPage1);
             this.uiTabControl1.Controls.Add(this.tabPage2);
+            this.uiTabControl1.Controls.Add(this.tabPage3);
             this.uiTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.uiTabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -136,6 +142,40 @@ namespace ModernGUI_V3
             this.tabPage2.Text = "Sản phẩm";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // DatePicker_Year_SanPham
+            // 
+            this.DatePicker_Year_SanPham.FillColor = System.Drawing.Color.White;
+            this.DatePicker_Year_SanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.DatePicker_Year_SanPham.Location = new System.Drawing.Point(1228, 8);
+            this.DatePicker_Year_SanPham.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DatePicker_Year_SanPham.MaxLength = 4;
+            this.DatePicker_Year_SanPham.MinimumSize = new System.Drawing.Size(63, 0);
+            this.DatePicker_Year_SanPham.Name = "DatePicker_Year_SanPham";
+            this.DatePicker_Year_SanPham.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.DatePicker_Year_SanPham.ShowType = Sunny.UI.UIDateType.Year;
+            this.DatePicker_Year_SanPham.Size = new System.Drawing.Size(87, 29);
+            this.DatePicker_Year_SanPham.SymbolDropDown = 61555;
+            this.DatePicker_Year_SanPham.SymbolNormal = 61555;
+            this.DatePicker_Year_SanPham.SymbolSize = 24;
+            this.DatePicker_Year_SanPham.TabIndex = 119;
+            this.DatePicker_Year_SanPham.Text = "2024";
+            this.DatePicker_Year_SanPham.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DatePicker_Year_SanPham.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            this.DatePicker_Year_SanPham.Watermark = "";
+            this.DatePicker_Year_SanPham.ValueChanged += new Sunny.UI.UIDatePicker.OnDateTimeChanged(this.DatePicker_Year_SanPham_ValueChanged);
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.AutoSize = true;
+            this.uiLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLabel1.Location = new System.Drawing.Point(1109, 12);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(130, 25);
+            this.uiLabel1.TabIndex = 118;
+            this.uiLabel1.Text = "Lọc theo năm";
+            // 
             // DatePicker_MY_SanPham
             // 
             this.DatePicker_MY_SanPham.DateYearMonthFormat = "MM-yyyy";
@@ -185,39 +225,66 @@ namespace ModernGUI_V3
             this.PieChart_DoanhThu.TabIndex = 6;
             this.PieChart_DoanhThu.Text = "uiPieChart1";
             // 
-            // DatePicker_Year_SanPham
+            // tabPage3
             // 
-            this.DatePicker_Year_SanPham.FillColor = System.Drawing.Color.White;
-            this.DatePicker_Year_SanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.DatePicker_Year_SanPham.Location = new System.Drawing.Point(1228, 8);
-            this.DatePicker_Year_SanPham.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DatePicker_Year_SanPham.MaxLength = 4;
-            this.DatePicker_Year_SanPham.MinimumSize = new System.Drawing.Size(63, 0);
-            this.DatePicker_Year_SanPham.Name = "DatePicker_Year_SanPham";
-            this.DatePicker_Year_SanPham.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.DatePicker_Year_SanPham.ShowType = Sunny.UI.UIDateType.Year;
-            this.DatePicker_Year_SanPham.Size = new System.Drawing.Size(87, 29);
-            this.DatePicker_Year_SanPham.SymbolDropDown = 61555;
-            this.DatePicker_Year_SanPham.SymbolNormal = 61555;
-            this.DatePicker_Year_SanPham.SymbolSize = 24;
-            this.DatePicker_Year_SanPham.TabIndex = 119;
-            this.DatePicker_Year_SanPham.Text = "2024";
-            this.DatePicker_Year_SanPham.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DatePicker_Year_SanPham.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
-            this.DatePicker_Year_SanPham.Watermark = "";
-            this.DatePicker_Year_SanPham.ValueChanged += new Sunny.UI.UIDatePicker.OnDateTimeChanged(this.DatePicker_Year_SanPham_ValueChanged);
+            this.tabPage3.Controls.Add(this.PieChart_XuHuong);
+            this.tabPage3.Controls.Add(this.DatePicker_MY_XuHuong);
+            this.tabPage3.Controls.Add(this.uiLabel3);
+            this.tabPage3.Location = new System.Drawing.Point(0, 40);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1348, 792);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Xu hướng";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // uiLabel1
+            // PieChart_XuHuong
             // 
-            this.uiLabel1.AutoSize = true;
-            this.uiLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.uiLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel1.Location = new System.Drawing.Point(1109, 12);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(130, 25);
-            this.uiLabel1.TabIndex = 118;
-            this.uiLabel1.Text = "Lọc theo năm";
+            this.PieChart_XuHuong.ChartStyleType = Sunny.UI.UIChartStyleType.Default;
+            this.PieChart_XuHuong.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PieChart_XuHuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.PieChart_XuHuong.LegendFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.PieChart_XuHuong.Location = new System.Drawing.Point(0, 58);
+            this.PieChart_XuHuong.MinimumSize = new System.Drawing.Size(1, 1);
+            this.PieChart_XuHuong.Name = "PieChart_XuHuong";
+            this.PieChart_XuHuong.Size = new System.Drawing.Size(1348, 734);
+            this.PieChart_XuHuong.SubFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.PieChart_XuHuong.TabIndex = 119;
+            this.PieChart_XuHuong.Text = "uiPieChart1";
+            // 
+            // DatePicker_MY_XuHuong
+            // 
+            this.DatePicker_MY_XuHuong.DateYearMonthFormat = "MM-yyyy";
+            this.DatePicker_MY_XuHuong.FillColor = System.Drawing.Color.White;
+            this.DatePicker_MY_XuHuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.DatePicker_MY_XuHuong.Location = new System.Drawing.Point(331, 8);
+            this.DatePicker_MY_XuHuong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DatePicker_MY_XuHuong.MaxLength = 7;
+            this.DatePicker_MY_XuHuong.MinimumSize = new System.Drawing.Size(63, 0);
+            this.DatePicker_MY_XuHuong.Name = "DatePicker_MY_XuHuong";
+            this.DatePicker_MY_XuHuong.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.DatePicker_MY_XuHuong.ReadOnly = true;
+            this.DatePicker_MY_XuHuong.ShowType = Sunny.UI.UIDateType.YearMonth;
+            this.DatePicker_MY_XuHuong.Size = new System.Drawing.Size(110, 29);
+            this.DatePicker_MY_XuHuong.SymbolDropDown = 61555;
+            this.DatePicker_MY_XuHuong.SymbolNormal = 61555;
+            this.DatePicker_MY_XuHuong.SymbolSize = 24;
+            this.DatePicker_MY_XuHuong.TabIndex = 118;
+            this.DatePicker_MY_XuHuong.Text = "11-2024";
+            this.DatePicker_MY_XuHuong.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DatePicker_MY_XuHuong.Value = new System.DateTime(2024, 11, 1, 0, 0, 0, 0);
+            this.DatePicker_MY_XuHuong.Watermark = "";
+            // 
+            // uiLabel3
+            // 
+            this.uiLabel3.AutoSize = true;
+            this.uiLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLabel3.Location = new System.Drawing.Point(12, 12);
+            this.uiLabel3.Name = "uiLabel3";
+            this.uiLabel3.Size = new System.Drawing.Size(340, 25);
+            this.uiLabel3.TabIndex = 117;
+            this.uiLabel3.Text = "Thông tin dự đoán số lượng sản phẩm";
             // 
             // FThongKe
             // 
@@ -228,11 +295,14 @@ namespace ModernGUI_V3
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FThongKe";
             this.Text = "FThongKe";
+            this.Load += new System.EventHandler(this.FThongKe_Load);
             this.uiTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -250,5 +320,9 @@ namespace ModernGUI_V3
         private Sunny.UI.UIDatePicker DatePicker_Year_DoanhThu;
         private Sunny.UI.UIDatePicker DatePicker_Year_SanPham;
         private Sunny.UI.UILabel uiLabel1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private Sunny.UI.UIPieChart PieChart_XuHuong;
+        private Sunny.UI.UIDatePicker DatePicker_MY_XuHuong;
+        private Sunny.UI.UILabel uiLabel3;
     }
 }
