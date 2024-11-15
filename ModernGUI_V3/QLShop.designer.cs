@@ -3742,24 +3742,24 @@ namespace ModernGUI_V3
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ThongTinHoaDon")]
 	public partial class ThongTinHoaDon
 	{
-		
+
 		private string _MaHoaDon;
-		
+
 		private string _MaSanPham;
-		
+
 		private string _TenSanPham;
-		
+
 		private System.Nullable<int> _SoLuong;
-		
+
 		private System.Nullable<decimal> _Gia;
-		
+
 		private System.Nullable<decimal> _Thanhtien;
-		
+
 		public ThongTinHoaDon()
 		{
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHoaDon", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MaHoaDon", DbType = "VarChar(100) NOT NULL", CanBeNull = false)]
 		public string MaHoaDon
 		{
 			get
@@ -3774,44 +3774,8 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-	}
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_PN")]
-	public partial class v_PN
-	{
-		
-		private System.Nullable<int> _SoLuong;
-		
-		private System.Nullable<decimal> _GiaVon;
-		
-		private string _TenSanPham;
-		
-		private string _MaSanPham;
-		
-		private string _MaPhieuNhap;
-		
-		private string _MaNhaCungCap;
-		
-		public v_PN()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int")]
-		public System.Nullable<int> SoLuong
-		{
-			get
-			{
-				return this._SoLuong;
-			}
-			set
-			{
-				if ((this._SoLuong != value))
-				{
-					this._SoLuong = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSanPham", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MaSanPham", DbType = "VarChar(10) NOT NULL", CanBeNull = false)]
 		public string MaSanPham
 		{
 			get
@@ -3826,23 +3790,8 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaVon", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> GiaVon
-		{
-			get
-			{
-				return this._GiaVon;
-			}
-			set
-			{
-				if ((this._GiaVon != value))
-				{
-					this._GiaVon = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSanPham", DbType="NVarChar(100)")]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_TenSanPham", DbType = "NVarChar(100)")]
 		public string TenSanPham
 		{
 			get
@@ -3857,8 +3806,7 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-	}
-		
+	
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int")]
 		public System.Nullable<int> SoLuong
 		{
@@ -3871,21 +3819,6 @@ namespace ModernGUI_V3
 				if ((this._SoLuong != value))
 				{
 					this._SoLuong = value;
-				}
-			}
-		}
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSanPham", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string MaSanPham
-		{
-			get
-			{
-				return this._MaSanPham;
-			}
-			set
-			{
-				if ((this._MaSanPham != value))
-				{
-					this._MaSanPham = value;
 				}
 			}
 		}
@@ -3905,21 +3838,6 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPhieuNhap", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string MaPhieuNhap
-		{
-			get
-			{
-				return this._MaPhieuNhap;
-			}
-			set
-			{
-				if ((this._MaPhieuNhap != value))
-				{
-					this._MaPhieuNhap = value;
-				}
-			}
-		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Thanhtien", DbType="Decimal(10,2)")]
 		public System.Nullable<decimal> Thanhtien
@@ -3936,7 +3854,108 @@ namespace ModernGUI_V3
 				}
 			}
 		}
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhaCungCap", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+	}
+	[global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.v_PN")]
+	public partial class v_PN
+	{
+
+		private System.Nullable<int> _SoLuong;
+
+		private System.Nullable<decimal> _GiaVon;
+
+		private string _TenSanPham;
+
+		private string _MaSanPham;
+
+		private string _MaPhieuNhap;
+
+		private string _MaNhaCungCap;
+
+		public v_PN()
+		{
+		}
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_SoLuong", DbType = "Int")]
+		public System.Nullable<int> SoLuong
+		{
+			get
+			{
+				return this._SoLuong;
+			}
+			set
+			{
+				if ((this._SoLuong != value))
+				{
+					this._SoLuong = value;
+				}
+			}
+		}
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_GiaVon", DbType = "Decimal(18,0)")]
+		public System.Nullable<decimal> GiaVon
+		{
+			get
+			{
+				return this._GiaVon;
+			}
+			set
+			{
+				if ((this._GiaVon != value))
+				{
+					this._GiaVon = value;
+				}
+			}
+		}
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_TenSanPham", DbType = "NVarChar(100)")]
+		public string TenSanPham
+		{
+			get
+			{
+				return this._TenSanPham;
+			}
+			set
+			{
+				if ((this._TenSanPham != value))
+				{
+					this._TenSanPham = value;
+				}
+			}
+		}
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MaSanPham", DbType = "VarChar(10) NOT NULL", CanBeNull = false)]
+		public string MaSanPham
+		{
+			get
+			{
+				return this._MaSanPham;
+			}
+			set
+			{
+				if ((this._MaSanPham != value))
+				{
+					this._MaSanPham = value;
+				}
+			}
+		}
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MaPhieuNhap", DbType = "VarChar(100) NOT NULL", CanBeNull = false)]
+		public string MaPhieuNhap
+		{
+			get
+			{
+				return this._MaPhieuNhap;
+			}
+			set
+			{
+				if ((this._MaPhieuNhap != value))
+				{
+					this._MaPhieuNhap = value;
+				}
+			}
+		}
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MaNhaCungCap", DbType = "VarChar(25) NOT NULL", CanBeNull = false)]
 		public string MaNhaCungCap
 		{
 			get
@@ -3951,5 +3970,6 @@ namespace ModernGUI_V3
 				}
 			}
 		}
+	}
 }
 #pragma warning restore 1591

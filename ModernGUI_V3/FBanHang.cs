@@ -1,5 +1,4 @@
-﻿using _06_LeBuiThienDuc_Tuan6;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

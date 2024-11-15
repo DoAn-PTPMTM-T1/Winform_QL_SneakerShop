@@ -73,6 +73,7 @@ namespace ModernGUI_V3
             this.txtMaPN = new Sunny.UI.UITextBox();
             this.uiLabel12 = new Sunny.UI.UILabel();
             this.uiTitlePanel1 = new Sunny.UI.UITitlePanel();
+            this.uiTextBox1 = new Sunny.UI.UITextBox();
             this.grvCTPN = new Sunny.UI.UIDataGridView();
             this.MaPN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,11 +82,6 @@ namespace ModernGUI_V3
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uiTitlePanel2 = new Sunny.UI.UITitlePanel();
             this.grvSanPham = new Sunny.UI.UIDataGridView();
-            this.cboNCC = new Sunny.UI.UIComboBox();
-            this.uiLabel9 = new Sunny.UI.UILabel();
-            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
-            this.ThemSp = new Sunny.UI.UISymbolButton();
-            this.uiTextBox1 = new Sunny.UI.UITextBox();
             this.Them = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,6 +92,10 @@ namespace ModernGUI_V3
             this.ThuongHieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DanhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuongTon_SP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboNCC = new Sunny.UI.UIComboBox();
+            this.uiLabel9 = new Sunny.UI.UILabel();
+            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
+            this.ThemSp = new Sunny.UI.UISymbolButton();
             this.pnlHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grv_TTPN)).BeginInit();
             this.uiTitlePanel1.SuspendLayout();
@@ -285,6 +285,7 @@ namespace ModernGUI_V3
             this.grv_TTPN.Size = new System.Drawing.Size(777, 177);
             this.grv_TTPN.TabIndex = 127;
             this.grv_TTPN.TagString = "";
+            this.grv_TTPN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grv_TTPN_CellClick);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -586,6 +587,22 @@ namespace ModernGUI_V3
             this.uiTitlePanel1.Text = "Chi tiết phiếu nhập";
             this.uiTitlePanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // uiTextBox1
+            // 
+            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox1.Enabled = false;
+            this.uiTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiTextBox1.Location = new System.Drawing.Point(166, 49);
+            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox1.Name = "uiTextBox1";
+            this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBox1.ShowText = false;
+            this.uiTextBox1.Size = new System.Drawing.Size(223, 29);
+            this.uiTextBox1.TabIndex = 124;
+            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox1.Watermark = "";
+            // 
             // grvCTPN
             // 
             this.grvCTPN.AllowUserToAddRows = false;
@@ -650,6 +667,7 @@ namespace ModernGUI_V3
             this.grvCTPN.Size = new System.Drawing.Size(777, 278);
             this.grvCTPN.TabIndex = 123;
             this.grvCTPN.TagString = "";
+            this.grvCTPN.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvCTPN_CellValueChanged);
             // 
             // MaPN
             // 
@@ -773,88 +791,6 @@ namespace ModernGUI_V3
             this.grvSanPham.TabIndex = 148;
             this.grvSanPham.TagString = "";
             // 
-            // cboNCC
-            // 
-            this.cboNCC.DataSource = null;
-            this.cboNCC.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cboNCC.FillColor = System.Drawing.Color.White;
-            this.cboNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cboNCC.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.cboNCC.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.cboNCC.Location = new System.Drawing.Point(175, 52);
-            this.cboNCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cboNCC.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cboNCC.Name = "cboNCC";
-            this.cboNCC.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.cboNCC.Size = new System.Drawing.Size(306, 29);
-            this.cboNCC.SymbolSize = 24;
-            this.cboNCC.TabIndex = 119;
-            this.cboNCC.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cboNCC.Watermark = "";
-            this.cboNCC.SelectedIndexChanged += new System.EventHandler(this.cboNCC_SelectedIndexChanged);
-            // 
-            // uiLabel9
-            // 
-            this.uiLabel9.AutoSize = true;
-            this.uiLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.uiLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel9.Location = new System.Drawing.Point(31, 56);
-            this.uiLabel9.Name = "uiLabel9";
-            this.uiLabel9.Size = new System.Drawing.Size(133, 25);
-            this.uiLabel9.TabIndex = 118;
-            this.uiLabel9.Text = "Nhà cung cấp";
-            // 
-            // uiSymbolButton1
-            // 
-            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiSymbolButton1.Image = ((System.Drawing.Image)(resources.GetObject("uiSymbolButton1.Image")));
-            this.uiSymbolButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiSymbolButton1.Location = new System.Drawing.Point(574, 49);
-            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton1.Name = "uiSymbolButton1";
-            this.uiSymbolButton1.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
-            this.uiSymbolButton1.Size = new System.Drawing.Size(105, 35);
-            this.uiSymbolButton1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiSymbolButton1.StyleCustomMode = true;
-            this.uiSymbolButton1.Symbol = 61530;
-            this.uiSymbolButton1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.uiSymbolButton1.TabIndex = 120;
-            this.uiSymbolButton1.Text = "Lưu";
-            this.uiSymbolButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            // 
-            // ThemSp
-            // 
-            this.ThemSp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ThemSp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ThemSp.Location = new System.Drawing.Point(349, 95);
-            this.ThemSp.MinimumSize = new System.Drawing.Size(1, 1);
-            this.ThemSp.Name = "ThemSp";
-            this.ThemSp.Size = new System.Drawing.Size(132, 35);
-            this.ThemSp.Symbol = 61543;
-            this.ThemSp.TabIndex = 115;
-            this.ThemSp.Text = "Thêm";
-            this.ThemSp.TipsFont = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ThemSp.Click += new System.EventHandler(this.uiSymbolButton4_Click);
-            // 
-            // uiTextBox1
-            // 
-            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox1.Enabled = false;
-            this.uiTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiTextBox1.Location = new System.Drawing.Point(166, 49);
-            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 16);
-            this.uiTextBox1.Name = "uiTextBox1";
-            this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBox1.ShowText = false;
-            this.uiTextBox1.Size = new System.Drawing.Size(223, 29);
-            this.uiTextBox1.TabIndex = 124;
-            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox1.Watermark = "";
-            // 
             // Them
             // 
             this.Them.DataPropertyName = "Them";
@@ -934,6 +870,72 @@ namespace ModernGUI_V3
             this.SoLuongTon_SP.MinimumWidth = 6;
             this.SoLuongTon_SP.Name = "SoLuongTon_SP";
             this.SoLuongTon_SP.Width = 112;
+            // 
+            // cboNCC
+            // 
+            this.cboNCC.DataSource = null;
+            this.cboNCC.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cboNCC.FillColor = System.Drawing.Color.White;
+            this.cboNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cboNCC.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cboNCC.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cboNCC.Location = new System.Drawing.Point(175, 52);
+            this.cboNCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboNCC.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cboNCC.Name = "cboNCC";
+            this.cboNCC.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.cboNCC.Size = new System.Drawing.Size(306, 29);
+            this.cboNCC.SymbolSize = 24;
+            this.cboNCC.TabIndex = 119;
+            this.cboNCC.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cboNCC.Watermark = "";
+            this.cboNCC.SelectedIndexChanged += new System.EventHandler(this.cboNCC_SelectedIndexChanged);
+            // 
+            // uiLabel9
+            // 
+            this.uiLabel9.AutoSize = true;
+            this.uiLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLabel9.Location = new System.Drawing.Point(31, 56);
+            this.uiLabel9.Name = "uiLabel9";
+            this.uiLabel9.Size = new System.Drawing.Size(133, 25);
+            this.uiLabel9.TabIndex = 118;
+            this.uiLabel9.Text = "Nhà cung cấp";
+            // 
+            // uiSymbolButton1
+            // 
+            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiSymbolButton1.Image = ((System.Drawing.Image)(resources.GetObject("uiSymbolButton1.Image")));
+            this.uiSymbolButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiSymbolButton1.Location = new System.Drawing.Point(574, 49);
+            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton1.Name = "uiSymbolButton1";
+            this.uiSymbolButton1.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
+            this.uiSymbolButton1.Size = new System.Drawing.Size(105, 35);
+            this.uiSymbolButton1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiSymbolButton1.StyleCustomMode = true;
+            this.uiSymbolButton1.Symbol = 61530;
+            this.uiSymbolButton1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.uiSymbolButton1.TabIndex = 120;
+            this.uiSymbolButton1.Text = "Lưu";
+            this.uiSymbolButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            // 
+            // ThemSp
+            // 
+            this.ThemSp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ThemSp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ThemSp.Location = new System.Drawing.Point(349, 95);
+            this.ThemSp.MinimumSize = new System.Drawing.Size(1, 1);
+            this.ThemSp.Name = "ThemSp";
+            this.ThemSp.Size = new System.Drawing.Size(132, 35);
+            this.ThemSp.Symbol = 61543;
+            this.ThemSp.TabIndex = 115;
+            this.ThemSp.Text = "Thêm";
+            this.ThemSp.TipsFont = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ThemSp.Click += new System.EventHandler(this.uiSymbolButton4_Click);
             // 
             // FNhapHang
             // 

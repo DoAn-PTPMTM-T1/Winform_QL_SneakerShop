@@ -64,7 +64,5 @@ D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL
 D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.pdb
 D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.Login.resources
 D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.FConfig.resources
+D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.csproj.ResolveComReference.cache
 D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\obj\Debug\ModernGUI_V3.csproj.AssemblyReference.cache
-D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\EntityFramework.xml
-D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\EntityFramework.SqlServer.xml
-D:\study\Phát triển phần mềm và ứng dụng thông minh\DoAn\Winform_QL_SneakerShop\ModernGUI_V3\bin\Debug\User.pdb

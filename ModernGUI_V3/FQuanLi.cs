@@ -14,6 +14,7 @@ namespace ModernGUI_V3
         ValidateHelper val=new ValidateHelper();
         QLShopDataContext qlss = new QLShopDataContext();
         List<NhaCungCap> List_NCC = new List<NhaCungCap>();
+        QLShopDataContext qlkm = new QLShopDataContext();
 
         public FQuanLi()
         {
@@ -24,6 +25,8 @@ namespace ModernGUI_V3
             loadnhanvien();
             loadSanpham();
             load_grvNCC();
+            load_KM();
+            Enable_KM();
         }
 
         void Enable_Control_banDau()
@@ -248,7 +251,253 @@ namespace ModernGUI_V3
 
         #endregion
 
+        #region KhuyenMai
+        void Enable_KM()
+        {
+            control_KM.btnAdd.Enabled = true;
+            control_KM.btnEdit.Enabled = true;
+            control_KM.btnDelete.Enabled = true;
+            control_KM.btnSubmit.Enabled = false;
+            control_KM.btnCancel.Enabled = true;
+            control_KM.btnClose.Enabled = false;
+        }
 
+        void on_txtKM()
+        {
+            txt_TenPKM.Enabled = true;
+            txt_GiamGia.Enabled = true;
+            txt_LoaiGiaGiam.Enabled = true;
+        }
+
+        int flag_km = 0;
+        private void control_KM_BtnAddClicked(object sender, EventArgs e)
+        {
+            tao_MaKH();
+            control_KM.btnCancel.Enabled = true;
+            control_KM.btnSubmit.Enabled = true;
+            control_KM.btnClose.Enabled = true;
+            on_txtKM();
+            control_KM.btnEdit.Enabled = false;
+            control_KM.btnDelete.Enabled = false;
+            flag_km = 1;
+        }
+
+        private void them_KM()
+        {
+            try
+            {
+                // Kiểm tra tất cả các trường đầu vào có được điền hay chưa
+                if (string.IsNullOrEmpty(txt_GiamGia.Text) ||
+                    string.IsNullOrEmpty(txt_LoaiGiaGiam.Text) ||
+                    string.IsNullOrEmpty(txt_TenPKM.Text))
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                    return;
+                }
+
+                PhieuGiamGia pgg = new PhieuGiamGia();
+                pgg.MaPhieuGiamGia = txt_MaKM.Text;
+                pgg.TenPhieuGiamGia = txt_TenPKM.Text;
+                if (!decimal.TryParse(txt_GiamGia.Text, out decimal giaTri))
+                {
+                    MessageBox.Show("Giá trị giảm giá phải là số hợp lệ.");
+                    return;
+                }
+                pgg.GiaTri = giaTri;
+
+                pgg.LoaiGiamGia = txt_LoaiGiaGiam.Text;
+                if (dateNgayBatDau.Value > dateNgayKetThuc.Value)
+                {
+                    MessageBox.Show("Ngày không hợp lệ. Ngày kết thúc phải lớn hơn ngày bắt đầu.");
+                    return;
+                }
+
+                pgg.NgayBatDau = dateNgayBatDau.Value;
+                pgg.NgayKetThuc = dateNgayKetThuc.Value;
+
+                // Thêm phiếu giảm giá vào cơ sở dữ liệu
+                qlkm.PhieuGiamGias.InsertOnSubmit(pgg);
+                qlkm.SubmitChanges();
+                MessageBox.Show("Tạo phiếu khuyến mãi thành công");
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị chi tiết lỗi cho người dùng
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+            }
+        }
+
+        private void tao_MaKH()
+        {
+            DateTime ngayHienTai = DateTime.Today;
+            var slpn = qlkm.PhieuGiamGias.Count(item =>
+                item.NgayBatDau.HasValue && item.NgayBatDau.Value.Date == ngayHienTai);
+            slpn += 1;
+            txt_MaKM.Text = "KM" + DateTime.Today.ToString("ddMMyyyy") + slpn.ToString("D3");
+        }
+
+        private void load_KM()
+        {
+            var allKm = from km in qlkm.PhieuGiamGias
+                        select new
+                        {
+                            MaPhieuGiamGia = km.MaPhieuGiamGia,
+                            LoaiGiamGia = km.LoaiGiamGia,
+                            GiaTri = km.GiaTri,
+                            NgayBatDau = km.NgayBatDau,
+                            NgayKetThuc = km.NgayKetThuc,
+                            TenPhieuGiamGia = km.TenPhieuGiamGia
+                        };
+            grv_KM.DataSource = allKm;
+        }
+
+        private void clear_txtKM()
+        {
+            txt_MaKM.Clear();
+            txt_GiamGia.Clear();
+            txt_findMKM.Clear();
+            txt_TenPKM.Clear();
+
+        }
+        private void control_KM_BtnSubmitClicked(object sender, EventArgs e)
+        {
+            if (flag_km == 1)
+            {
+                them_KM();
+            }
+            else
+            {
+                edit_KM();
+            }
+            Enable_KM();
+            load_KM();
+            clear_txtKM();
+
+        }
+
+        private void btn_timMKM_Click(object sender, EventArgs e)
+        {
+            var x = qlkm.PhieuGiamGias.Where(item => item.MaPhieuGiamGia == txt_findMKM.Text).FirstOrDefault();
+            if (x != null)
+            {
+                txt_MaKM.Text = x.MaPhieuGiamGia.ToString();
+                txt_TenPKM.Text = x.TenPhieuGiamGia.ToString();
+                txt_GiamGia.Text = x.GiaTri.Value.ToString();
+                dateNgayBatDau.Value = x.NgayBatDau.Value;
+                dateNgayKetThuc.Value = x.NgayKetThuc.Value;
+            }
+            else
+            {
+                MessageBox.Show("Không tồn tại phiếu giảm giá");
+            }
+
+        }
+
+        private void txt_GiamGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void control_KM_BtnDeleteClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txt_MaKM.Text))
+                {
+                    var findKh = qlkm.PhieuGiamGias.Where(item => item.MaPhieuGiamGia == txt_MaKM.Text).FirstOrDefault();
+                    if (findKh != null)
+                    {
+
+                        qlkm.PhieuGiamGias.DeleteOnSubmit(findKh);
+                        qlkm.SubmitChanges();
+                        MessageBox.Show("Xóa phiếu khuyến mãi thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công!");
+                    }
+                }
+                else
+                    MessageBox.Show("Vui lòng chọn mã");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không xóa được");
+            }
+            load_KM();
+            clear_txtKM();
+        }
+
+        private void grv_KM_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                txt_MaKM.Text = grv_KM.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txt_TenPKM.Text = grv_KM.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txt_GiamGia.Text = grv_KM.Rows[e.RowIndex].Cells[2].Value.ToString();
+                dateNgayBatDau.Text = grv_KM.Rows[e.RowIndex].Cells[3].Value.ToString();
+                dateNgayKetThuc.Text = grv_KM.Rows[e.RowIndex].Cells[4].Value.ToString();
+            }
+        }
+
+        private void control_KM_BtnCancelClicked(object sender, EventArgs e)
+        {
+            clear_txtKM();
+            Enable_KM();
+        }
+
+        private void control_KM_BtnEditClicked(object sender, EventArgs e)
+        {
+            dateNgayBatDau.Enabled = false;
+            txt_TenPKM.Enabled = false;
+            txt_GiamGia.Enabled = true;
+            control_KM.btnCancel.Enabled = true;
+            control_KM.btnCancel.Enabled = true;
+            control_KM.btnSubmit.Enabled = true;
+            control_KM.btnClose.Enabled = true;
+            control_KM.btnAdd.Enabled = false;
+            control_KM.btnDelete.Enabled = false;
+            flag_km = 2;
+
+        }
+
+        private void edit_KM()
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txt_MaKM.Text))
+                {
+
+                    var findKh = qlkm.PhieuGiamGias.Where(item => item.MaPhieuGiamGia == txt_MaKM.Text).FirstOrDefault();
+                    if (findKh != null)
+                    {
+
+                        findKh.NgayKetThuc = dateNgayKetThuc.Value;
+                        findKh.GiaTri = decimal.Parse(txt_GiamGia.Text);
+                        qlkm.SubmitChanges();
+                        MessageBox.Show("Cập nhật thành công!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn khuyến mãi");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void control_KM_BtnCloseClicked(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
 
         #region thuonghieu
         #region method
@@ -818,10 +1067,8 @@ namespace ModernGUI_V3
        
         private void btnThemHinh_Click(object sender, EventArgs e)
         {
-           
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
-          
             openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
             openFileDialog.Title = "Chọn hình ảnh";
 
@@ -897,7 +1144,7 @@ namespace ModernGUI_V3
                     qlshop.SubmitChanges();
                     MessageBox.Show("Thêm Sản phẩm thành công");
                 }
-                else 
+                else
                 {
                     var sp = qlshop.SanPhams.FirstOrDefault(x => x.MaSanPham == txtMaSP.Text);
                     if (sp != null)
@@ -910,10 +1157,10 @@ namespace ModernGUI_V3
                         sp.MaThuongHieu = cboThuongHieu.SelectedValue.ToString();
                         sp.MaDanhMuc = cboDanhMuc.SelectedValue.ToString();
 
-                        
+
                         if (!string.IsNullOrEmpty(fileName))
                         {
-                            
+
                             if (!string.IsNullOrEmpty(sp.HinhAnh))
                             {
                                 string oldImagePath = Path.Combine(projectDirectory, sp.HinhAnh);
@@ -923,7 +1170,7 @@ namespace ModernGUI_V3
                                     {
                                         File.Delete(oldImagePath);
                                     }
-                                    catch { } 
+                                    catch { }
                                 }
                             }
                             sp.HinhAnh = "Images\\" + fileName;
@@ -933,8 +1180,6 @@ namespace ModernGUI_V3
                         MessageBox.Show("Cập nhật Sản phẩm thành công");
                     }
                 }
-
-               
                 loadSanpham();
                 txtMaSP.Clear();
                 txtTenSP.Clear();
@@ -949,6 +1194,13 @@ namespace ModernGUI_V3
                 control_SanPham.btnSubmit.Enabled = false;
                 control_SanPham.btnEdit.Enabled = true;
                 control_SanPham.btnDelete.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
         #region nhà cung cấp
 
         void load_grvNCC()
