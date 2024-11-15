@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.ComponentModel;
 
-namespace _06_LeBuiThienDuc_Tuan6
+namespace ModernGUI_V3
 {
     static class ConvertUltil
     {

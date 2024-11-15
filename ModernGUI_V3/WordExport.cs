@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace _06_LeBuiThienDuc_Tuan6
+namespace ModernGUI_V3
 {
     class WordExport
     {

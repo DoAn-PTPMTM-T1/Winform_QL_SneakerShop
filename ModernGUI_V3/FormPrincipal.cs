@@ -14,8 +14,8 @@ namespace ModernGUI_V3
 {
     public partial class FormPrincipal : Form
     {
-        public string manv, hoten, chucvu;
-        public FormPrincipal(string manv, string hoten, string chucvu)
+        public string manv, hoten, chucvu, maloaitk;
+        public FormPrincipal(string manv, string hoten, string chucvu, string maloaitk)
         {
             InitializeComponent();
             UIStyles.CultureInfo = CultureInfos.en_US;
@@ -23,12 +23,21 @@ namespace ModernGUI_V3
             this.manv = manv;
             this.hoten = hoten;
             this.chucvu = chucvu;
+            this.maloaitk = maloaitk;
             txtTenNhanVien.Text = hoten;
         }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
+            if(maloaitk == "LTK02")
+            {
+                btnQuanLi.Visible = false;
+                btnNhapHang.Visible = false;
+                btnKhachHang.Top -= btnQuanLi.Height;
+                btnThongKe.Top -= (btnQuanLi.Height + btnThongKe.Height);
+                btnCaiDat.Top -= (btnQuanLi.Height + btnThongKe.Height);
+                btnDangXuat.Top -= (btnQuanLi.Height + btnThongKe.Height);
+            }
         }
 
         #region Load Form

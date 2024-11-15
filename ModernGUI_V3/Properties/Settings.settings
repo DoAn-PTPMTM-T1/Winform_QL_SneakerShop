@@ -3,31 +3,15 @@
   <Profiles />
   <Settings>
     <Setting Name="STRConn" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Server=DESKTOP-O3NQ36D; User ID=sa; Pwd=123</Value>
+      <Value Profile="(Default)">Server=DESKTOP-986S66O; User ID=sa; Pwd=123</Value>
     </Setting>
     <Setting Name="ShopSneakerConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-O3NQ36D;Initial Catalog=ShopSneaker;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DESKTOP-986S66O;Initial Catalog=ShopSneaker;User ID=sa;Password=123&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-O3NQ36D;Initial Catalog=ShopSneaker;Persist Security Info=True;User ID=sa</Value>
-    </Setting>
-    <Setting Name="ShopSneakerConnectionString1" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-O3NQ36D;Initial Catalog=ShopSneaker;User ID=sa;Password=123&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-O3NQ36D;Initial Catalog=ShopSneaker;User ID=sa;Password=123</Value>
-    </Setting>
-    <Setting Name="ShopSneakerConnectionString2" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-O3NQ36D;Initial Catalog=ShopSneaker;User ID=sa&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-O3NQ36D;Initial Catalog=ShopSneaker;User ID=sa</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-986S66O;Initial Catalog=ShopSneaker;User ID=sa;Password=123</Value>
     </Setting>
   </Settings>
 </SettingsFile>

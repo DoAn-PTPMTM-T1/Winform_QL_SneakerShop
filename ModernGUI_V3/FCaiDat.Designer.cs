@@ -46,16 +46,15 @@ namespace ModernGUI_V3
             // txtMatKhauMoi
             // 
             this.txtMatKhauMoi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMatKhauMoi.Enabled = false;
             this.txtMatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhauMoi.Location = new System.Drawing.Point(319, 190);
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(278, 190);
             this.txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMatKhauMoi.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.Padding = new System.Windows.Forms.Padding(5);
             this.txtMatKhauMoi.PasswordChar = '*';
             this.txtMatKhauMoi.ShowText = false;
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(294, 39);
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(335, 39);
             this.txtMatKhauMoi.TabIndex = 182;
             this.txtMatKhauMoi.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtMatKhauMoi.Watermark = "";
@@ -75,16 +74,15 @@ namespace ModernGUI_V3
             // txtMatKhau
             // 
             this.txtMatKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMatKhau.Enabled = false;
             this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(319, 141);
+            this.txtMatKhau.Location = new System.Drawing.Point(278, 141);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMatKhau.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Padding = new System.Windows.Forms.Padding(5);
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.ShowText = false;
-            this.txtMatKhau.Size = new System.Drawing.Size(294, 39);
+            this.txtMatKhau.Size = new System.Drawing.Size(335, 39);
             this.txtMatKhau.TabIndex = 180;
             this.txtMatKhau.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtMatKhau.Watermark = "";
@@ -106,13 +104,13 @@ namespace ModernGUI_V3
             this.txtTenDangNhap.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTenDangNhap.Enabled = false;
             this.txtTenDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDangNhap.Location = new System.Drawing.Point(319, 90);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(278, 90);
             this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenDangNhap.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Padding = new System.Windows.Forms.Padding(5);
             this.txtTenDangNhap.ShowText = false;
-            this.txtTenDangNhap.Size = new System.Drawing.Size(294, 41);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(335, 41);
             this.txtTenDangNhap.TabIndex = 178;
             this.txtTenDangNhap.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtTenDangNhap.Watermark = "";
@@ -132,16 +130,15 @@ namespace ModernGUI_V3
             // txtNhapLai
             // 
             this.txtNhapLai.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNhapLai.Enabled = false;
             this.txtNhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapLai.Location = new System.Drawing.Point(319, 239);
+            this.txtNhapLai.Location = new System.Drawing.Point(278, 239);
             this.txtNhapLai.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNhapLai.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtNhapLai.Name = "txtNhapLai";
             this.txtNhapLai.Padding = new System.Windows.Forms.Padding(5);
             this.txtNhapLai.PasswordChar = '*';
             this.txtNhapLai.ShowText = false;
-            this.txtNhapLai.Size = new System.Drawing.Size(294, 39);
+            this.txtNhapLai.Size = new System.Drawing.Size(335, 39);
             this.txtNhapLai.TabIndex = 184;
             this.txtNhapLai.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtNhapLai.Watermark = "";
@@ -189,6 +186,7 @@ namespace ModernGUI_V3
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.TipsFont = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
@@ -214,11 +212,11 @@ namespace ModernGUI_V3
             this.btnHuy.TabIndex = 187;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.TipsFont = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // FCaiDat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1348, 832);
             this.Controls.Add(this.btnHuy);
@@ -235,6 +233,7 @@ namespace ModernGUI_V3
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FCaiDat";
             this.Text = "FCaiDat";
+            this.Load += new System.EventHandler(this.FCaiDat_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

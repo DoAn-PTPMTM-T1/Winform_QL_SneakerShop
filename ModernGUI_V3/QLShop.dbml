@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ShopSneaker" Class="QLShopDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-O3NQ36D;Initial Catalog=ShopSneaker;User ID=sa" SettingsObjectName="ModernGUI_V3.Properties.Settings" SettingsPropertyName="ShopSneakerConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-986S66O;Initial Catalog=ShopSneaker;User ID=sa" SettingsObjectName="ModernGUI_V3.Properties.Settings" SettingsPropertyName="ShopSneakerConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChiTietHoaDon" Member="ChiTietHoaDons">
     <Type Name="ChiTietHoaDon">
       <Column Name="MaSanPham" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -177,6 +177,16 @@
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Gia" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
       <Column Name="Thanhtien" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      </Type>
+  </Table>
+  <Table Name="dbo.v_PN" Member="v_PNs">
+    <Type Name="v_PN">
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiaVon" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MaSanPham" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaPhieuNhap" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MaNhaCungCap" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

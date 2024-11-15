@@ -162,12 +162,12 @@
             this.txtEmail_NCC = new Sunny.UI.UITextBox();
             this.uiLabel31 = new Sunny.UI.UILabel();
             this.grvNCC = new Sunny.UI.UIDataGridView();
-            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNhaCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNhaCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboTimTenNCC_NCC = new Sunny.UI.UISymbolButton();
+            this.btnTimTenNCC_NCC = new Sunny.UI.UISymbolButton();
             this.txtTimTen_NCC = new Sunny.UI.UITextBox();
             this.uiLabel26 = new Sunny.UI.UILabel();
             this.txtTenNCC = new Sunny.UI.UITextBox();
@@ -211,6 +211,7 @@
             this.uiLabel39 = new Sunny.UI.UILabel();
             this.uiTextBox8 = new Sunny.UI.UITextBox();
             this.uiLabel40 = new Sunny.UI.UILabel();
+            txtTimNV = new Sunny.UI.UITextBox();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvNhanVien)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -1192,7 +1193,7 @@
             this.tabPage5.Controls.Add(this.uiLabel5);
             this.tabPage5.Location = new System.Drawing.Point(0, 40);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1348, 792);
+            this.tabPage5.Size = new System.Drawing.Size(200, 60);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Thương hiệu";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1633,7 +1634,7 @@
             this.tabPage4.Controls.Add(this.txtEmail_NCC);
             this.tabPage4.Controls.Add(this.uiLabel31);
             this.tabPage4.Controls.Add(this.grvNCC);
-            this.tabPage4.Controls.Add(this.cboTimTenNCC_NCC);
+            this.tabPage4.Controls.Add(this.btnTimTenNCC_NCC);
             this.tabPage4.Controls.Add(this.txtTimTen_NCC);
             this.tabPage4.Controls.Add(this.uiLabel26);
             this.tabPage4.Controls.Add(this.txtTenNCC);
@@ -1653,6 +1654,12 @@
             this.control_NCC.Name = "control_NCC";
             this.control_NCC.Size = new System.Drawing.Size(1092, 59);
             this.control_NCC.TabIndex = 181;
+            this.control_NCC.BtnAddClicked += new User.ThemXoaSuaHuyLuu.BtnAddClickedHandler(this.control_NCC_BtnAddClicked);
+            this.control_NCC.BtnDeleteClicked += new User.ThemXoaSuaHuyLuu.BtnDeleteClickedHandler(this.control_NCC_BtnDeleteClicked);
+            this.control_NCC.BtnEditClicked += new User.ThemXoaSuaHuyLuu.BtnEditClickedHandler(this.control_NCC_BtnEditClicked);
+            this.control_NCC.BtnCancelClicked += new User.ThemXoaSuaHuyLuu.BtnCancelClickedHandler(this.control_NCC_BtnCancelClicked);
+            this.control_NCC.BtnSubmitClicked += new User.ThemXoaSuaHuyLuu.BtnSubmitClickedHandler(this.control_NCC_BtnSubmitClicked);
+            this.control_NCC.BtnCloseClicked += new User.ThemXoaSuaHuyLuu.BtnCloseClickedHandler(this.control_NCC_BtnCloseClicked);
             // 
             // txtDiaChi_NCC
             // 
@@ -1666,7 +1673,7 @@
             this.txtDiaChi_NCC.Padding = new System.Windows.Forms.Padding(5);
             this.txtDiaChi_NCC.ShowText = false;
             this.txtDiaChi_NCC.Size = new System.Drawing.Size(248, 29);
-            this.txtDiaChi_NCC.TabIndex = 180;
+            this.txtDiaChi_NCC.TabIndex = 174;
             this.txtDiaChi_NCC.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtDiaChi_NCC.Watermark = "";
             // 
@@ -1722,7 +1729,7 @@
             this.txtEmail_NCC.Padding = new System.Windows.Forms.Padding(5);
             this.txtEmail_NCC.ShowText = false;
             this.txtEmail_NCC.Size = new System.Drawing.Size(248, 29);
-            this.txtEmail_NCC.TabIndex = 178;
+            this.txtEmail_NCC.TabIndex = 175;
             this.txtEmail_NCC.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtEmail_NCC.Watermark = "";
             // 
@@ -1757,8 +1764,8 @@
             this.grvNCC.ColumnHeadersHeight = 32;
             this.grvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.grvNCC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaNCC,
-            this.TenNCC,
+            this.MaNhaCungCap,
+            this.TenNhaCungCap,
             this.DienThoai,
             this.Email_NCC,
             this.DiaChi_NCC});
@@ -1797,23 +1804,24 @@
             this.grvNCC.ScrollBarStyleInherited = false;
             this.grvNCC.SelectedIndex = -1;
             this.grvNCC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvNCC.Size = new System.Drawing.Size(1092, 394);
+            this.grvNCC.Size = new System.Drawing.Size(1148, 394);
             this.grvNCC.TabIndex = 178;
             this.grvNCC.TagString = "";
+            this.grvNCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvNCC_CellClick);
             // 
-            // MaNCC
+            // MaNhaCungCap
             // 
-            this.MaNCC.DataPropertyName = "MaNCC";
-            this.MaNCC.HeaderText = "Mã nhà cung cấp";
-            this.MaNCC.MinimumWidth = 6;
-            this.MaNCC.Name = "MaNCC";
+            this.MaNhaCungCap.DataPropertyName = "MaNhaCungCap";
+            this.MaNhaCungCap.HeaderText = "Mã nhà cung cấp";
+            this.MaNhaCungCap.MinimumWidth = 6;
+            this.MaNhaCungCap.Name = "MaNhaCungCap";
             // 
-            // TenNCC
+            // TenNhaCungCap
             // 
-            this.TenNCC.DataPropertyName = "TenNCC";
-            this.TenNCC.HeaderText = "Tên nhà cung cấp";
-            this.TenNCC.MinimumWidth = 6;
-            this.TenNCC.Name = "TenNCC";
+            this.TenNhaCungCap.DataPropertyName = "TenNhaCungCap";
+            this.TenNhaCungCap.HeaderText = "Tên nhà cung cấp";
+            this.TenNhaCungCap.MinimumWidth = 6;
+            this.TenNhaCungCap.Name = "TenNhaCungCap";
             // 
             // DienThoai
             // 
@@ -1824,38 +1832,39 @@
             // 
             // Email_NCC
             // 
-            this.Email_NCC.DataPropertyName = "Email_NCC";
+            this.Email_NCC.DataPropertyName = "Email";
             this.Email_NCC.HeaderText = "Email";
             this.Email_NCC.MinimumWidth = 6;
             this.Email_NCC.Name = "Email_NCC";
             // 
             // DiaChi_NCC
             // 
-            this.DiaChi_NCC.DataPropertyName = "DiaChi_NCC";
+            this.DiaChi_NCC.DataPropertyName = "Diachi";
             this.DiaChi_NCC.HeaderText = "Địa chỉ";
             this.DiaChi_NCC.MinimumWidth = 6;
             this.DiaChi_NCC.Name = "DiaChi_NCC";
             // 
-            // cboTimTenNCC_NCC
+            // btnTimTenNCC_NCC
             // 
-            this.cboTimTenNCC_NCC.BackColor = System.Drawing.Color.White;
-            this.cboTimTenNCC_NCC.CircleRectWidth = 2;
-            this.cboTimTenNCC_NCC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboTimTenNCC_NCC.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.cboTimTenNCC_NCC.IsCircle = true;
-            this.cboTimTenNCC_NCC.Location = new System.Drawing.Point(1111, 18);
-            this.cboTimTenNCC_NCC.MinimumSize = new System.Drawing.Size(1, 1);
-            this.cboTimTenNCC_NCC.Name = "cboTimTenNCC_NCC";
-            this.cboTimTenNCC_NCC.Size = new System.Drawing.Size(49, 36);
-            this.cboTimTenNCC_NCC.Style = Sunny.UI.UIStyle.Custom;
-            this.cboTimTenNCC_NCC.StyleCustomMode = true;
-            this.cboTimTenNCC_NCC.Symbol = 61442;
-            this.cboTimTenNCC_NCC.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(98)))), ((int)(((byte)(102)))));
-            this.cboTimTenNCC_NCC.SymbolHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.cboTimTenNCC_NCC.SymbolPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(131)))), ((int)(((byte)(229)))));
-            this.cboTimTenNCC_NCC.SymbolSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(131)))), ((int)(((byte)(229)))));
-            this.cboTimTenNCC_NCC.TabIndex = 177;
-            this.cboTimTenNCC_NCC.TipsFont = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnTimTenNCC_NCC.BackColor = System.Drawing.Color.White;
+            this.btnTimTenNCC_NCC.CircleRectWidth = 2;
+            this.btnTimTenNCC_NCC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTimTenNCC_NCC.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            this.btnTimTenNCC_NCC.IsCircle = true;
+            this.btnTimTenNCC_NCC.Location = new System.Drawing.Point(1111, 18);
+            this.btnTimTenNCC_NCC.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnTimTenNCC_NCC.Name = "btnTimTenNCC_NCC";
+            this.btnTimTenNCC_NCC.Size = new System.Drawing.Size(49, 36);
+            this.btnTimTenNCC_NCC.Style = Sunny.UI.UIStyle.Custom;
+            this.btnTimTenNCC_NCC.StyleCustomMode = true;
+            this.btnTimTenNCC_NCC.Symbol = 61442;
+            this.btnTimTenNCC_NCC.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(98)))), ((int)(((byte)(102)))));
+            this.btnTimTenNCC_NCC.SymbolHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.btnTimTenNCC_NCC.SymbolPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(131)))), ((int)(((byte)(229)))));
+            this.btnTimTenNCC_NCC.SymbolSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(131)))), ((int)(((byte)(229)))));
+            this.btnTimTenNCC_NCC.TabIndex = 177;
+            this.btnTimTenNCC_NCC.TipsFont = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnTimTenNCC_NCC.Click += new System.EventHandler(this.btnTimTenNCC_NCC_Click);
             // 
             // txtTimTen_NCC
             // 
@@ -1868,7 +1877,7 @@
             this.txtTimTen_NCC.Padding = new System.Windows.Forms.Padding(5);
             this.txtTimTen_NCC.ShowText = false;
             this.txtTimTen_NCC.Size = new System.Drawing.Size(248, 29);
-            this.txtTimTen_NCC.TabIndex = 176;
+            this.txtTimTen_NCC.TabIndex = 179;
             this.txtTimTen_NCC.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtTimTen_NCC.Watermark = "";
             // 
@@ -1896,7 +1905,7 @@
             this.txtTenNCC.Padding = new System.Windows.Forms.Padding(5);
             this.txtTenNCC.ShowText = false;
             this.txtTenNCC.Size = new System.Drawing.Size(248, 29);
-            this.txtTenNCC.TabIndex = 174;
+            this.txtTenNCC.TabIndex = 173;
             this.txtTenNCC.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtTenNCC.Watermark = "";
             // 
@@ -1909,7 +1918,7 @@
             this.uiLabel27.Location = new System.Drawing.Point(12, 67);
             this.uiLabel27.Name = "uiLabel27";
             this.uiLabel27.Size = new System.Drawing.Size(170, 25);
-            this.uiLabel27.TabIndex = 173;
+            this.uiLabel27.TabIndex = 999;
             this.uiLabel27.Text = "Tên nhà cung cấp";
             // 
             // txtMaNCC
@@ -2613,8 +2622,7 @@
         private Sunny.UI.UIComboBox cboLoaiTK;
         private Sunny.UI.UILabel uiLabel25;
         private System.Windows.Forms.TabPage tabPage4;
-        private Sunny.UI.UIDataGridView grvNCC;
-        private Sunny.UI.UISymbolButton cboTimTenNCC_NCC;
+        private Sunny.UI.UISymbolButton btnTimTenNCC_NCC;
         private Sunny.UI.UITextBox txtTimTen_NCC;
         private Sunny.UI.UILabel uiLabel26;
         private Sunny.UI.UITextBox txtTenNCC;
@@ -2628,11 +2636,6 @@
         private Sunny.UI.UITextBox txtEmail_NCC;
         private Sunny.UI.UILabel uiLabel31;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DienThoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email_NCC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi_NCC;
         private Sunny.UI.UIDataGridView grvCungUng;
         private Sunny.UI.UIComboBox cboSanPham_CungUng;
         private Sunny.UI.UILabel uiLabel32;
@@ -2706,5 +2709,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTon_SP;
         private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
+        private Sunny.UI.UIDataGridView grvNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNhaCungCap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNhaCungCap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DienThoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email_NCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi_NCC;
     }
 }
