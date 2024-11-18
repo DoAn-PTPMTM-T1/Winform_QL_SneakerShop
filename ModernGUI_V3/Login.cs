@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace ModernGUI_V3
 {
@@ -29,6 +31,19 @@ namespace ModernGUI_V3
             ViTriBanDau_lblEx2 = lblEx2.Top;
             ViTriBanDau_btn = btnDangNhap.Top;
             ViTriBanDau_pass = panelPass.Top;
+        }
+        public static string HashPassword(string password)
+        {
+            using (MD5 md5Hash = MD5.Create())
+            {
+                byte[] bytes = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
@@ -66,7 +81,8 @@ namespace ModernGUI_V3
                 {
                     string tenDangNhap = txtUser.Text;
                     string matKhau = txtPass.Text;
-                    var user = qlshop.NhanViens.FirstOrDefault(t => t.MaNhanVien == tenDangNhap && t.MatKhau == matKhau);
+                    string hashedPassword = HashPassword(matKhau);
+                    var user = qlshop.NhanViens.FirstOrDefault(t => t.MaNhanVien == tenDangNhap && t.MatKhau == hashedPassword);
 
                     if (user != null)
                     {
@@ -75,7 +91,9 @@ namespace ModernGUI_V3
                         this.Hide();
                     }
                     else
+                    {
                         MessageBox.Show("Bạn không có quyền truy cập hệ thống!");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -86,5 +104,6 @@ namespace ModernGUI_V3
                 }
             }
         }
+
     }
 }

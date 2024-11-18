@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace ModernGUI_V3
 {
@@ -32,7 +34,7 @@ namespace ModernGUI_V3
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             if (matKhauMoi != matKhauNhapLai)
             {
                 MessageBox.Show("Mật khẩu mới và mật khẩu nhập lại không khớp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -41,24 +43,31 @@ namespace ModernGUI_V3
 
             var nhanVien = qlshop.NhanViens.FirstOrDefault(nv => nv.MaNhanVien == manv);
 
-            if (nhanVien != null && nhanVien.MatKhau == matKhauHienTai)
+            if (nhanVien != null)
             {
-                nhanVien.MatKhau = matKhauMoi;
-                qlshop.SubmitChanges();
-                MessageBox.Show("Đổi mật khẩu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Băm mật khẩu hiện tại để so sánh
+                string hashedMatKhauHienTai = HashPassword(matKhauHienTai);
 
-                FormPrincipal mainForm = this.Owner as FormPrincipal;
-                if (mainForm != null)
+                if (nhanVien.MatKhau == hashedMatKhauHienTai)
                 {
-                    mainForm.Close();
+                    // Băm mật khẩu mới trước khi lưu
+                    nhanVien.MatKhau = HashPassword(matKhauMoi);
+                    qlshop.SubmitChanges();
+                    MessageBox.Show("Đổi mật khẩu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    FormPrincipal mainForm = this.Owner as FormPrincipal;
+                    if (mainForm != null)
+                    {
+                        mainForm.Close();
+                    }
+                    this.Close();
+                    Login login = new Login();
+                    login.Visible = true;
                 }
-                this.Close();
-                Login login = new Login();
-                login.Visible = true;
-            }
-            else
-            {
-                MessageBox.Show("Mật khẩu hiện tại không đúng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    MessageBox.Show("Mật khẩu hiện tại không đúng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -67,6 +76,20 @@ namespace ModernGUI_V3
             txtMatKhau.Clear();
             txtMatKhauMoi.Clear();
             txtNhapLai.Clear();
+        }
+
+        public static string HashPassword(string password)
+        {
+            using (MD5 md5Hash = MD5.Create())
+            {
+                byte[] bytes = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
     }
 }

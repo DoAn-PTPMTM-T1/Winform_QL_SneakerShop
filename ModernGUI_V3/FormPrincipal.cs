@@ -29,7 +29,7 @@ namespace ModernGUI_V3
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            if(maloaitk == "LTK02")
+            if(maloaitk == "Admin")
             {
                 btnQuanLi.Visible = false;
                 btnNhapHang.Visible = false;

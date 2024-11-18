@@ -513,8 +513,6 @@ namespace ModernGUI_V3
                     btnInHD.Enabled = true;
                     btnTaoHD.Enabled = true;
                     panelCTHD.Enabled = false;
-                    resetForm();
-                    ResetText();
                 }
                 else
                 {

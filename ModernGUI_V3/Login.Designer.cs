@@ -45,12 +45,14 @@ namespace ModernGUI_V3
             this.uiPanel2 = new Sunny.UI.UIPanel();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiPanel1 = new Sunny.UI.UIPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.uiPanel3.SuspendLayout();
             this.panelPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.uiPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // uiPanel3
@@ -67,13 +69,13 @@ namespace ModernGUI_V3
             this.uiPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
             this.uiPanel3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
             this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel3.Location = new System.Drawing.Point(267, 37);
+            this.uiPanel3.Location = new System.Drawing.Point(265, 37);
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
             this.uiPanel3.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
             this.uiPanel3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(190)))), ((int)(((byte)(243)))));
-            this.uiPanel3.Size = new System.Drawing.Size(384, 266);
+            this.uiPanel3.Size = new System.Drawing.Size(386, 266);
             this.uiPanel3.TabIndex = 13;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -253,6 +255,7 @@ namespace ModernGUI_V3
             // 
             // uiPanel2
             // 
+            this.uiPanel2.Controls.Add(this.pictureBox3);
             this.uiPanel2.Controls.Add(this.uiLabel1);
             this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.uiPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(124)))), ((int)(((byte)(145)))));
@@ -267,7 +270,7 @@ namespace ModernGUI_V3
             this.uiPanel2.Radius = 0;
             this.uiPanel2.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
             this.uiPanel2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(124)))), ((int)(((byte)(145)))));
-            this.uiPanel2.Size = new System.Drawing.Size(267, 266);
+            this.uiPanel2.Size = new System.Drawing.Size(265, 266);
             this.uiPanel2.TabIndex = 12;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -280,7 +283,7 @@ namespace ModernGUI_V3
             this.uiLabel1.ForeColor = System.Drawing.Color.Black;
             this.uiLabel1.Location = new System.Drawing.Point(0, 0);
             this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(267, 66);
+            this.uiLabel1.Size = new System.Drawing.Size(265, 66);
             this.uiLabel1.TabIndex = 7;
             this.uiLabel1.Text = "QUẢN LÍ CỬA HÀNG";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -305,6 +308,16 @@ namespace ModernGUI_V3
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.InitialImage = null;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 69);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(267, 173);
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -327,6 +340,7 @@ namespace ModernGUI_V3
             this.panelUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.uiPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,5 +362,6 @@ namespace ModernGUI_V3
         private Sunny.UI.UIPanel uiPanel2;
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UIPanel uiPanel1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

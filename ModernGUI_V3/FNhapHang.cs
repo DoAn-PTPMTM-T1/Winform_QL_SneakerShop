@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -411,13 +412,12 @@ namespace ModernGUI_V3
             wd.WriteTable(PN, 1);
             MessageBox.Show("Done");
 
-            // lấy chi tiết phiếu nhập -> tổng tiền 
+            // lấy chi tiết phiếu nhâp -> tổng tiền 
             // lấy mã nhân viên 
             // Lấy bảng mới
             // tạo datatable mới
             //
             // Dictionary
         }
-
     }
 }
